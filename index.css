@@ -1,17 +1,17 @@
 :root {
-  --bg: #050814;
-  --bg-soft: #0b1020;
-  --card: rgba(14, 20, 36, 0.82);
-  --card-strong: rgba(10, 15, 28, 0.96);
-  --text: #f5f7fb;
-  --muted: #a9b4c7;
+  --bg: #f4f7fb;
+  --bg-soft: #ffffff;
+  --card: rgba(255, 255, 255, 0.88);
+  --card-strong: rgba(255, 255, 255, 0.96);
+  --text: #101828;
+  --muted: #5f6b7a;
   --accent: #ff4b3e;
   --accent-hover: #ff6257;
-  --accent-blue: #5da8ff;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
-  --shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.16);
+  --accent-blue: #2563eb;
+  --border: rgba(15, 23, 42, 0.10);
+  --border-strong: rgba(15, 23, 42, 0.18);
+  --shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
   --radius: 18px;
   --container: 1320px;
 }
@@ -28,6 +28,8 @@
   --accent-blue: #5da8ff;
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.14);
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.16);
 }
 
 *,
@@ -46,10 +48,11 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1.6;
   background:
-    radial-gradient(circle at top left, rgba(255, 75, 62, 0.12), transparent 24%),
-    radial-gradient(circle at top right, rgba(93, 168, 255, 0.13), transparent 26%),
-    linear-gradient(180deg, #04070f 0%, #060b16 45%, #040812 100%);
+    radial-gradient(circle at top left, rgba(255, 75, 62, 0.10), transparent 24%),
+    radial-gradient(circle at top right, rgba(93, 168, 255, 0.10), transparent 26%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 45%, var(--bg) 100%);
   overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
 }
 
 img {
@@ -115,6 +118,12 @@ textarea {
 .text-emerald-300 { color: #6ee7b7; }
 .text-amber-300 { color: #fcd34d; }
 
+.office-excel { color: #22c55e; }
+.office-word { color: #60a5fa; }
+.office-powerpoint { color: #fb923c; }
+.office-outlook { color: #38bdf8; }
+.office-teams { color: #a78bfa; }
+
 #preloader {
   position: fixed;
   inset: 0;
@@ -161,7 +170,7 @@ textarea {
 }
 
 .navbar.scrolled {
-  background: rgba(5, 10, 20, 0.82);
+  background: color-mix(in srgb, var(--bg-soft) 82%, transparent);
   border-color: var(--border);
   box-shadow: var(--shadow-soft);
 }
@@ -212,7 +221,7 @@ textarea {
 }
 
 .nav-links a:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(127, 127, 127, 0.08);
   transform: translateY(-1px);
 }
 
@@ -224,7 +233,7 @@ textarea {
 
 .icon-btn {
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(127, 127, 127, 0.06);
   color: var(--text);
   border-radius: 16px;
   padding: 12px 14px;
@@ -274,7 +283,7 @@ textarea {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(127, 127, 127, 0.06);
   color: var(--text);
   border-radius: 14px;
   padding: 10px 12px;
@@ -289,8 +298,9 @@ textarea {
   padding: 14px;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: rgba(8, 13, 24, 0.96);
-  box-shadow: var(--shadow);
+  background: linear-gradient(180deg, var(--card), var(--card-strong));
+  box-shadow: var(--shadow-soft);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .nav-menu a {
@@ -302,7 +312,7 @@ textarea {
 }
 
 .nav-menu a:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(127, 127, 127, 0.08);
 }
 
 .hero {
@@ -406,8 +416,8 @@ textarea {
   gap: 8px;
   padding: 12px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  background: rgba(127, 127, 127, 0.06);
   backdrop-filter: blur(12px);
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
 }
@@ -457,7 +467,7 @@ textarea {
 .btn-secondary {
   color: var(--text);
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(127, 127, 127, 0.06);
   backdrop-filter: blur(10px);
 }
 
@@ -477,16 +487,14 @@ textarea {
   width: 390px;
   height: 460px;
   border-radius: 30px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: linear-gradient(180deg, rgba(18,27,48,0.72), rgba(8,13,24,0.94));
-  box-shadow:
-    0 28px 70px rgba(0,0,0,0.32),
-    inset 0 1px 0 rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--card), var(--card-strong));
+  box-shadow: var(--shadow-soft);
   backdrop-filter: blur(18px);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .hero-avatar-wrap {
@@ -495,10 +503,10 @@ textarea {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(135deg, rgba(127,127,127,0.08), rgba(127,127,127,0.02));
+  border: 1px solid var(--border);
   box-shadow:
-    0 18px 50px rgba(0,0,0,0.28),
+    0 18px 50px rgba(0,0,0,0.12),
     0 0 40px rgba(93,168,255,0.14);
 }
 
@@ -510,7 +518,7 @@ textarea {
   border-radius: 50%;
   border: 4px solid rgba(93,168,255,0.25);
   box-shadow:
-    0 0 0 10px rgba(255,255,255,0.03),
+    0 0 0 10px rgba(127,127,127,0.03),
     0 0 40px rgba(93,168,255,0.16);
 }
 
@@ -519,13 +527,13 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  background: rgba(127,127,127,0.08);
   color: var(--text);
   padding: 12px 16px;
   border-radius: 16px;
   backdrop-filter: blur(12px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  box-shadow: var(--shadow-soft);
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
@@ -533,8 +541,8 @@ textarea {
 
 .floating-card:hover {
   transform: translateY(-4px) scale(1.02);
-  border-color: rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.1);
+  border-color: var(--border-strong);
+  background: rgba(127,127,127,0.12);
 }
 
 .floating-card-top {
@@ -564,9 +572,10 @@ textarea {
   margin-bottom: 24px;
 }
 
-.chip {
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(255, 255, 255, 0.03);
+.chip,
+.skill-chip {
+  border: 1px solid var(--border);
+  background: rgba(127, 127, 127, 0.05);
   color: var(--text);
   padding: 10px 16px;
   border-radius: 999px;
@@ -578,11 +587,13 @@ textarea {
     box-shadow 0.2s ease;
 }
 
-.chip:hover {
+.chip:hover,
+.skill-chip:hover {
   transform: translateY(-1px);
 }
 
-.chip.active {
+.chip.active,
+.skill-chip.active {
   color: #fff;
   background: linear-gradient(135deg, var(--accent), var(--accent-hover));
   border-color: transparent;
@@ -593,9 +604,10 @@ textarea {
 .tl-item,
 .contact-form,
 .recruit-card {
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: linear-gradient(180deg, rgba(16, 24, 42, 0.88), rgba(8, 14, 28, 0.96));
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--card), var(--card-strong));
   box-shadow: var(--shadow-soft);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .grid.projects {
@@ -636,7 +648,7 @@ textarea {
       180deg,
       rgba(255, 255, 255, 0.05) 0%,
       rgba(255, 255, 255, 0.01) 38%,
-      rgba(0, 0, 0, 0.2) 100%
+      rgba(0, 0, 0, 0.08) 100%
     );
   opacity: 0;
   pointer-events: none;
@@ -662,7 +674,7 @@ textarea {
 
 .project:hover .project-image {
   transform: scale(1.06);
-  filter: brightness(0.76) blur(1px);
+  filter: brightness(0.9) blur(1px);
 }
 
 .card-body {
@@ -714,7 +726,7 @@ textarea {
 
 .project-code {
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(127, 127, 127, 0.06);
 }
 
 .project-code:hover {
@@ -749,11 +761,11 @@ textarea {
   min-height: 118px;
   padding: 18px 12px 16px;
   border-radius: 16px;
-  border: 1px solid rgba(92, 121, 255, 0.28);
-  background: linear-gradient(180deg, rgba(26, 40, 88, 0.86), rgba(18, 30, 70, 0.94));
+  border: 1px solid rgba(92, 121, 255, 0.20);
+  background: linear-gradient(180deg, rgba(70, 97, 178, 0.10), rgba(70, 97, 178, 0.18));
   box-shadow:
-    0 10px 18px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    0 10px 18px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -765,6 +777,10 @@ textarea {
     transform 0.28s ease,
     border-color 0.28s ease,
     box-shadow 0.28s ease;
+}
+
+:root.dark .skill-card-tailwind {
+  background: linear-gradient(180deg, rgba(26, 40, 88, 0.86), rgba(18, 30, 70, 0.94));
 }
 
 .skill-card-tailwind::after {
@@ -801,7 +817,7 @@ textarea {
   transform: translateY(-5px);
   border-color: rgba(111, 134, 255, 0.55);
   box-shadow:
-    0 16px 28px rgba(0, 0, 0, 0.24),
+    0 16px 28px rgba(15, 23, 42, 0.12),
     0 0 18px rgba(111, 134, 255, 0.12);
 }
 
@@ -925,13 +941,14 @@ textarea {
   width: 100%;
   padding: 14px 15px;
   color: var(--text);
-  background: rgba(2, 6, 16, 0.88);
+  background: rgba(127, 127, 127, 0.04);
   border: 1px solid var(--border);
   border-radius: 14px;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    background 0.35s ease;
 }
 
 input::placeholder,
@@ -984,7 +1001,7 @@ textarea:focus {
   bottom: 18px;
   z-index: 50;
   border: 1px solid var(--border);
-  background: rgba(10, 16, 28, 0.95);
+  background: color-mix(in srgb, var(--bg-soft) 86%, transparent);
   color: var(--text);
   border-radius: 999px;
   padding: 11px 13px;
@@ -1321,49 +1338,4 @@ html.lenis body {
   .footer {
     font-size: 0.92rem;
   }
-}
-
-.skill-chip {
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--text);
-  padding: 10px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition:
-    transform 0.16s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.skill-chip:hover {
-  transform: translateY(-1px);
-}
-
-.skill-chip.active {
-  color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-  border-color: transparent;
-  box-shadow: 0 14px 26px rgba(255, 75, 62, 0.18);
-}
-
-.office-excel {
-  color: #22c55e;
-}
-
-.office-word {
-  color: #60a5fa;
-}
-
-.office-powerpoint {
-  color: #fb923c;
-}
-
-.office-outlook {
-  color: #38bdf8;
-}
-
-.office-teams {
-  color: #a78bfa;
 }

@@ -43,10 +43,21 @@ if (burgerBtn && navMenu) {
 
 const THEME_KEY = 'pref-theme';
 
+const updateThemeIcon = () => {
+  if (!themeToggle) return;
+  const icon = themeToggle.querySelector('i');
+  const isDark = document.documentElement.classList.contains('dark');
+
+  if (icon) {
+    icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+  }
+};
+
 const setTheme = (mode) => {
   const root = document.documentElement;
   root.classList.toggle('dark', mode === 'dark');
   localStorage.setItem(THEME_KEY, mode);
+  updateThemeIcon();
 };
 
 (() => {
@@ -87,6 +98,29 @@ chips.forEach((chip) => {
 
     projects.forEach((card) => {
       const tags = card.dataset.tags.split(',');
+      const match = filter === 'all' || tags.includes(filter);
+      card.style.display = match ? '' : 'none';
+    });
+  });
+});
+
+const skillChips = document.querySelectorAll('.skill-chip');
+const skillItems = document.querySelectorAll('.skill-item');
+
+skillChips.forEach((chip) => {
+  chip.addEventListener('click', () => {
+    skillChips.forEach((button) => {
+      button.classList.remove('active');
+      button.setAttribute('aria-selected', 'false');
+    });
+
+    chip.classList.add('active');
+    chip.setAttribute('aria-selected', 'true');
+
+    const filter = chip.dataset.skillFilter;
+
+    skillItems.forEach((card) => {
+      const tags = card.dataset.skillTags.split(',');
       const match = filter === 'all' || tags.includes(filter);
       card.style.display = match ? '' : 'none';
     });
@@ -261,28 +295,5 @@ magneticButtons.forEach((button) => {
 
   button.addEventListener('mouseleave', () => {
     button.style.transform = 'translate(0, 0)';
-  });
-});
-
-const skillChips = document.querySelectorAll('.skill-chip');
-const skillItems = document.querySelectorAll('.skill-item');
-
-skillChips.forEach((chip) => {
-  chip.addEventListener('click', () => {
-    skillChips.forEach((button) => {
-      button.classList.remove('active');
-      button.setAttribute('aria-selected', 'false');
-    });
-
-    chip.classList.add('active');
-    chip.setAttribute('aria-selected', 'true');
-
-    const filter = chip.dataset.skillFilter;
-
-    skillItems.forEach((card) => {
-      const tags = card.dataset.skillTags.split(',');
-      const match = filter === 'all' || tags.includes(filter);
-      card.style.display = match ? '' : 'none';
-    });
   });
 });
