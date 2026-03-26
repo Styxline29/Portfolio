@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Portfolio – Lucas VIGILE</title>
+  <meta
+    name="description"
+    content="Portfolio d'un étudiant en cybersécurité et développement web : projets, compétences, expériences, contact, CV téléchargeable."
+  />
+
+  <meta property="og:title" content="Portfolio – Étudiant Cybersécurité & Dev Web" />
+  <meta property="og:description" content="Projets, compétences, expériences, contact, CV." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="../assets/avatar.png" />
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class"
+    };
+  </script>
+
+  <link rel="stylesheet" href="../index.css" />
+</head>
+
+<body>
+  <div id="preloader" aria-hidden="true">
+    <div class="spinner" aria-label="Chargement"></div>
+    <p>Chargement...</p>
+  </div>
+
+  <header class="site-header" id="top">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+      <button
+        class="burger"
+        id="burgerBtn"
+        aria-expanded="false"
+        aria-controls="navMenu"
+        aria-label="Ouvrir le menu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links left">
+        <li>
+          <a href="#projets">
+            <i class="fa-solid fa-folder-open"></i>
+            <span>Projets</span>
+          </a>
+        </li>
+        <li>
+          <a href="#competences">
+            <i class="fa-solid fa-code"></i>
+            <span>Compétences</span>
+          </a>
+        </li>
+      </ul>
+
+      <a class="logo" href="#top" aria-label="Retour haut de page">
+        Styx<span class="accent">Aether</span>
+      </a>
+
+      <ul class="nav-links right">
+        <li>
+          <a href="#experience">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Expériences</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Me Contacter</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Basculer le thème">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a
+          href="../assets/CV_Lucas_VIGILE.pdf"
+          download
+          class="inline-flex items-center justify-center gap-2 rounded-2xl bg-red-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-500/20 transition duration-300 hover:-translate-y-1 hover:bg-red-400 hover:shadow-red-500/30"
+        >
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>Télécharger CV</span>
+        </a>
+      </div>
+
+      <div id="navMenu" class="nav-menu" hidden>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#experience">Expériences</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero reveal" aria-label="Présentation">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <span class="hero-kicker">Portfolio • Cybersécurité • Développement web</span>
+
+            <h1>
+              Lucas<span class="accent">Étudiant</span><br />
+              Développeur Web<br />
+              & Mobile
+            </h1>
+
+            <p>
+              Passionné par la cybersécurité et le développement front/back,
+              je crée des interfaces modernes, propres et performantes.
+            </p>
+
+            <div class="hero-cta">
+              <a
+                href="#projets"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl bg-red-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-500/20 transition duration-300 hover:-translate-y-1 hover:bg-red-400"
+              >
+                <i class="fa-solid fa-rocket"></i>
+                Voir mes projets
+              </a>
+
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-bold text-white backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/10"
+              >
+                <i class="fa-solid fa-envelope"></i>
+                Me contacter
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <div
+              class="relative mx-auto flex h-[220px] w-[220px] items-center justify-center rounded-full bg-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.25)] ring-1 ring-white/10 md:h-[240px] md:w-[240px]"
+            >
+              <div
+                class="pointer-events-none absolute inset-[-12px] rounded-full bg-blue-500/10 blur-2xl"
+              ></div>
+
+              <img
+                src="../assets/avatar.png"
+                alt="Photo de Lucas Vigile"
+                width="240"
+                height="240"
+                loading="eager"
+                decoding="async"
+                class="relative z-10 h-full w-full rounded-full border-4 border-blue-400/40 object-cover object-top shadow-[0_0_0_8px_rgba(96,165,250,0.06),0_0_25px_rgba(96,165,250,0.15)] transition duration-300 hover:scale-[1.02]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="section reveal" aria-labelledby="titre-projets">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="titre-projets"><i class="fa-solid fa-folder-open"></i> Projets</h2>
+          <p>Une sélection de réalisations : web, jeu et projets d'étude.</p>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Filtrer les projets">
+          <button class="chip active" data-filter="all" role="tab" aria-selected="true">Tous</button>
+          <button class="chip" data-filter="web" role="tab" aria-selected="false">Web</button>
+          <button class="chip" data-filter="cyber" role="tab" aria-selected="false">Jeu</button>
+          <button class="chip" data-filter="school" role="tab" aria-selected="false">Études</button>
+        </div>
+
+        <div class="grid projects" id="projectsGrid">
+          <article class="card project" data-tags="web" tabindex="0">
+            <img
+              src="../assets/projet-1.jpg"
+              alt="Aperçu vitrine KW-Océan"
+              loading="lazy"
+              class="h-[180px] w-full rounded-xl object-cover"
+            />
+            <div class="card-body">
+              <h3>Site vitrine KW Ocean</h3>
+              <p>
+                Site immobilier responsive avec animations, formulaire de contact
+                et navigation fluide.
+              </p>
+              <div class="card-actions">
+                <a
+                  href="https://github.com/Styxline29"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/10"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  Code
+                </a>
+
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="inline-flex items-center gap-2 rounded-xl bg-red-500 px-4 py-2 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-red-400"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Démo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project" data-tags="cyber" tabindex="0">
+            <img
+              src="../assets/projet-2.jpg"
+              alt="Aperçu du script"
+              loading="lazy"
+              class="h-[180px] w-full rounded-xl object-cover"
+            />
+            <div class="card-body">
+              <h3>Script FiveM</h3>
+              <p>
+                Script RageUI pour enrichir un serveur GTA RP avec de nouvelles
+                fonctionnalités.
+              </p>
+              <div class="card-actions">
+                <a
+                  href="https://github.com/Styxline29"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/10"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project" data-tags="school" tabindex="0">
+            <img
+              src="../assets/projet-3.jpg"
+              alt="Aperçu projet 3"
+              loading="lazy"
+              class="h-[180px] w-full rounded-xl object-cover"
+            />
+            <div class="card-body">
+              <h3>Dashboard d'administration</h3>
+              <p>
+                Gestion de contenus avec PHP/MySQL, interface claire,
+                authentification et rôles.
+              </p>
+              <div class="card-actions">
+                <a
+                  href="https://github.com/Styxline29"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/10"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="competences" class="section reveal" aria-labelledby="titre-competences">
+      <div class="container">
+        <div class="section-header skills-header">
+          <h2 id="titre-competences"><i class="fa-solid fa-code"></i> Compétences</h2>
+          <p>Un aperçu de mes langages, outils et savoir-faire.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-orange-500">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <h3>HTML5</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-blue-500">
+              <i class="fa-brands fa-css3-alt"></i>
+            </div>
+            <h3>CSS3</h3>
+          </article>
+
+          <article class="skill-card-tailwind group skill-card-active">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-yellow-400">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <h3>JavaScript</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-fuchsia-400">
+              <i class="fa-brands fa-php"></i>
+            </div>
+            <h3>PHP</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-sky-300">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <h3>MySQL</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-green-400">
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <h3>Python</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-red-400">
+              <i class="fa-brands fa-java"></i>
+            </div>
+            <h3>Java</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-violet-300">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3>C#</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-blue-300">
+              <i class="fa-solid fa-terminal"></i>
+            </div>
+            <h3>C / C++</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-purple-300">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <h3>Lua</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-slate-300">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <h3>Bash</h3>
+          </article>
+
+          <!-- AJOUTS DEMANDÉS -->
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-cyan-300">
+              <i class="fa-brands fa-wordpress"></i>
+            </div>
+            <h3>WordPress</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-indigo-300">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <h3>RageUI</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-emerald-300">
+              <i class="fa-solid fa-bars-progress"></i>
+            </div>
+            <h3>PMenu</h3>
+          </article>
+
+          <article class="skill-card-tailwind group">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-amber-300">
+              <i class="fa-solid fa-cube"></i>
+            </div>
+            <h3>JavaScript (Minecraft)</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPÉRIENCE -->
+    <section id="experience" class="section reveal" aria-labelledby="titre-experience">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="titre-experience"><i class="fa-solid fa-briefcase"></i> Expériences</h2>
+          <p>
+            Stage 2025 : création de sites pour Obi29, Minitaux Bretagne,
+            Minitaux Assurance et landing pages.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="tl-item">
+            <span class="tl-date">2025</span>
+            <h3>Stagiaire – Développement Web</h3>
+            <p>
+              Intégration de sites vitrines, optimisation des performances et mise
+              en place de formulaires.
+            </p>
+          </article>
+
+          <article class="tl-item">
+            <span class="tl-date">2009 → 2025</span>
+            <h3>Projets personnels</h3>
+            <p>
+              Minecraft, GTA RP, Garry’s Mod, scripts, UI et développement autour
+              de différents environnements.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal" aria-labelledby="titre-contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="titre-contact"><i class="fa-solid fa-paper-plane"></i> Contact</h2>
+          <p>Un projet, une question ? Écrivez-moi.</p>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/xxxxxxxx" method="POST">
+          <div class="form-row">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="vous@exemple.com"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Votre message..."
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-red-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-500/20 transition duration-300 hover:-translate-y-1 hover:bg-red-400 sm:w-auto"
+          >
+            <i class="fa-solid fa-paper-plane"></i>
+            Envoyer
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        © <span id="year"></span> • Lucas VIGILE —
+        <a href="https://github.com/Styxline29" target="_blank" rel="noreferrer noopener">
+          GitHub
+        </a>
+        • <a href="#top">Haut de page</a>
+      </p>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Revenir en haut">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="../index.js"></script>
+</body>
+</html>
