@@ -7,15 +7,14 @@
   <title>Portfolio – Lucas VIGILE</title>
   <meta
     name="description"
-    content="Portfolio d'un étudiant en cybersécurité et développement web : projets, compétences, expériences, contact, CV téléchargeable."
+    content="Portfolio d'un étudiant en cybersécurité et développement web : projets, compétences, expériences, contact et CV téléchargeable."
   />
 
-  <meta property="og:title" content="Portfolio – Étudiant Cybersécurité & Dev Web" />
-  <meta property="og:description" content="Projets, compétences, expériences, contact, CV." />
+  <meta property="og:title" content="Portfolio – Lucas VIGILE" />
+  <meta property="og:description" content="Projets, compétences, expériences et contact." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/avatar.png" />
 
-  <link rel="icon" type="image/png" href="./assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -26,13 +25,6 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class"
-    };
-  </script>
 
   <link rel="stylesheet" href="./index.css" />
 </head>
@@ -94,11 +86,7 @@
           <i class="fa-solid fa-moon"></i>
         </button>
 
-        <a
-          href="./assets/CV_Lucas_VIGILE.pdf"
-          download
-          class="cv-btn"
-        >
+        <a href="./assets/CV_Lucas_VIGILE.pdf" download class="cv-btn">
           <i class="fa-solid fa-file-arrow-down"></i>
           <span>Télécharger CV</span>
         </a>
@@ -201,13 +189,15 @@
         </div>
 
         <div class="grid projects" id="projectsGrid">
-          <article class="card project" data-tags="web" tabindex="0">
-            <img
-              src="./assets/obi29.png"
-              alt="Aperçu site vitrine immobilier"
-              loading="lazy"
-              class="h-[180px] w-full rounded-xl object-cover"
-            />
+          <article class="card project tilt-card" data-tags="web" tabindex="0">
+            <div class="project-image-wrap">
+              <img
+                src="./assets/obi29.png"
+                alt="Aperçu site vitrine immobilier"
+                loading="lazy"
+                class="project-image"
+              />
+            </div>
             <div class="card-body">
               <h3>Site vitrine KW Ocean</h3>
               <p>
@@ -238,13 +228,15 @@
             </div>
           </article>
 
-          <article class="card project" data-tags="cyber" tabindex="0">
-            <img
-              src="./assets/fivem.jpg"
-              alt="Aperçu Script FiveM"
-              loading="lazy"
-              class="h-[180px] w-full rounded-xl object-cover"
-            />
+          <article class="card project tilt-card" data-tags="cyber" tabindex="0">
+            <div class="project-image-wrap">
+              <img
+                src="./assets/fivem.jpg"
+                alt="Aperçu Script FiveM"
+                loading="lazy"
+                class="project-image"
+              />
+            </div>
             <div class="card-body">
               <h3>Script FiveM</h3>
               <p>
@@ -265,13 +257,15 @@
             </div>
           </article>
 
-          <article class="card project" data-tags="school" tabindex="0">
-            <img
-              src="./assets/paneladmin.png"
-              alt="Aperçu dashboard d'administration"
-              loading="lazy"
-              class="h-[180px] w-full rounded-xl object-cover"
-            />
+          <article class="card project tilt-card" data-tags="school" tabindex="0">
+            <div class="project-image-wrap">
+              <img
+                src="./assets/paneladmin.png"
+                alt="Aperçu dashboard d'administration"
+                loading="lazy"
+                class="project-image"
+              />
+            </div>
             <div class="card-body">
               <h3>Dashboard d'administration</h3>
               <p>
@@ -303,7 +297,7 @@
         </div>
 
         <div class="skills-grid">
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-orange-500">
               <i class="fa-brands fa-html5"></i>
@@ -311,7 +305,7 @@
             <h3>HTML5</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-blue-500">
               <i class="fa-brands fa-css3-alt"></i>
@@ -319,7 +313,7 @@
             <h3>CSS3</h3>
           </article>
 
-          <article class="skill-card-tailwind group skill-card-active">
+          <article class="skill-card-tailwind skill-card-active">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-yellow-400">
               <i class="fa-brands fa-js"></i>
@@ -327,7 +321,7 @@
             <h3>JavaScript</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-fuchsia-400">
               <i class="fa-brands fa-php"></i>
@@ -335,7 +329,7 @@
             <h3>PHP</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-sky-300">
               <i class="fa-solid fa-database"></i>
@@ -343,7 +337,7 @@
             <h3>MySQL</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-green-400">
               <i class="fa-brands fa-python"></i>
@@ -351,7 +345,7 @@
             <h3>Python</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-red-400">
               <i class="fa-brands fa-java"></i>
@@ -359,7 +353,7 @@
             <h3>Java</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-violet-300">
               <i class="fa-solid fa-code"></i>
@@ -367,7 +361,7 @@
             <h3>C#</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-blue-300">
               <i class="fa-solid fa-terminal"></i>
@@ -375,7 +369,7 @@
             <h3>C / C++</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-purple-300">
               <i class="fa-solid fa-gamepad"></i>
@@ -383,7 +377,7 @@
             <h3>Lua</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-slate-300">
               <i class="fa-solid fa-chevron-right"></i>
@@ -391,7 +385,7 @@
             <h3>Bash</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-cyan-300">
               <i class="fa-brands fa-wordpress"></i>
@@ -399,7 +393,7 @@
             <h3>WordPress</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-indigo-300">
               <i class="fa-solid fa-layer-group"></i>
@@ -407,7 +401,7 @@
             <h3>RageUI</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-emerald-300">
               <i class="fa-solid fa-bars-progress"></i>
@@ -415,7 +409,7 @@
             <h3>PMenu</h3>
           </article>
 
-          <article class="skill-card-tailwind group">
+          <article class="skill-card-tailwind">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-amber-300">
               <i class="fa-solid fa-cube"></i>
