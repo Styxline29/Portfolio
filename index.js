@@ -263,3 +263,26 @@ magneticButtons.forEach((button) => {
     button.style.transform = 'translate(0, 0)';
   });
 });
+
+const skillChips = document.querySelectorAll('.skill-chip');
+const skillItems = document.querySelectorAll('.skill-item');
+
+skillChips.forEach((chip) => {
+  chip.addEventListener('click', () => {
+    skillChips.forEach((button) => {
+      button.classList.remove('active');
+      button.setAttribute('aria-selected', 'false');
+    });
+
+    chip.classList.add('active');
+    chip.setAttribute('aria-selected', 'true');
+
+    const filter = chip.dataset.skillFilter;
+
+    skillItems.forEach((card) => {
+      const tags = card.dataset.skillTags.split(',');
+      const match = filter === 'all' || tags.includes(filter);
+      card.style.display = match ? '' : 'none';
+    });
+  });
+});

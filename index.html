@@ -294,11 +294,17 @@
       <div class="container">
         <div class="section-header skills-header">
           <h2 id="titre-competences"><i class="fa-solid fa-code"></i> Compétences</h2>
-          <p>Un aperçu de mes langages, outils et savoir-faire.</p>
+          <p>Un aperçu de mes compétences techniques et humaines.</p>
         </div>
 
-        <div class="skills-grid">
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+        <div class="filters" role="tablist" aria-label="Filtrer les compétences">
+          <button class="skill-chip active" data-skill-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="skill-chip" data-skill-filter="hard" role="tab" aria-selected="false">Hard skills</button>
+          <button class="skill-chip" data-skill-filter="soft" role="tab" aria-selected="false">Soft skills</button>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-orange-500">
               <i class="fa-brands fa-html5"></i>
@@ -306,7 +312,7 @@
             <h3>HTML5</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-blue-500">
               <i class="fa-brands fa-css3-alt"></i>
@@ -314,7 +320,7 @@
             <h3>CSS3</h3>
           </article>
 
-          <article class="skill-card-tailwind skill-card-active scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind skill-card-active scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-yellow-400">
               <i class="fa-brands fa-js"></i>
@@ -322,7 +328,7 @@
             <h3>JavaScript</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-fuchsia-400">
               <i class="fa-brands fa-php"></i>
@@ -330,7 +336,7 @@
             <h3>PHP</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-sky-300">
               <i class="fa-solid fa-database"></i>
@@ -338,7 +344,7 @@
             <h3>MySQL</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-green-400">
               <i class="fa-brands fa-python"></i>
@@ -346,7 +352,7 @@
             <h3>Python</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-red-400">
               <i class="fa-brands fa-java"></i>
@@ -354,7 +360,7 @@
             <h3>Java</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-violet-300">
               <i class="fa-solid fa-code"></i>
@@ -362,7 +368,7 @@
             <h3>C#</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-blue-300">
               <i class="fa-solid fa-terminal"></i>
@@ -370,7 +376,7 @@
             <h3>C / C++</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-purple-300">
               <i class="fa-solid fa-gamepad"></i>
@@ -378,7 +384,7 @@
             <h3>Lua</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-slate-300">
               <i class="fa-solid fa-chevron-right"></i>
@@ -386,7 +392,7 @@
             <h3>Bash</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-cyan-300">
               <i class="fa-brands fa-wordpress"></i>
@@ -394,7 +400,7 @@
             <h3>WordPress</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-indigo-300">
               <i class="fa-solid fa-layer-group"></i>
@@ -402,7 +408,7 @@
             <h3>RageUI</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-emerald-300">
               <i class="fa-solid fa-bars-progress"></i>
@@ -410,12 +416,100 @@
             <h3>PMenu</h3>
           </article>
 
-          <article class="skill-card-tailwind scroll-animate" data-animate="zoom-in">
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-amber-300">
               <i class="fa-solid fa-cube"></i>
             </div>
             <h3>JavaScript (Minecraft)</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind office-excel">
+              <i class="fa-solid fa-file-excel"></i>
+            </div>
+            <h3>Excel</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind office-word">
+              <i class="fa-solid fa-file-word"></i>
+            </div>
+            <h3>Word</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind office-powerpoint">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </div>
+            <h3>PowerPoint</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind office-outlook">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <h3>Outlook</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind office-teams">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Teams</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-green-400">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3>Communication</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-blue-300">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3>Travail d’équipe</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-amber-300">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h3>Créativité</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-red-400">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h3>Rigueur</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-cyan-300">
+              <i class="fa-solid fa-book-open-reader"></i>
+            </div>
+            <h3>Apprentissage rapide</h3>
+          </article>
+
+          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in">
+            <span class="skill-overflow-tailwind"></span>
+            <div class="skill-icon-tailwind text-violet-300">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <h3>Organisation</h3>
           </article>
         </div>
       </div>

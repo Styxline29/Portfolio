@@ -1322,3 +1322,48 @@ html.lenis body {
     font-size: 0.92rem;
   }
 }
+
+.skill-chip {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.skill-chip:hover {
+  transform: translateY(-1px);
+}
+
+.skill-chip.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  border-color: transparent;
+  box-shadow: 0 14px 26px rgba(255, 75, 62, 0.18);
+}
+
+.office-excel {
+  color: #22c55e;
+}
+
+.office-word {
+  color: #60a5fa;
+}
+
+.office-powerpoint {
+  color: #fb923c;
+}
+
+.office-outlook {
+  color: #38bdf8;
+}
+
+.office-teams {
+  color: #a78bfa;
+}
