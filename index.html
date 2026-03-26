@@ -27,7 +27,6 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -85,7 +84,7 @@
         <li>
           <a href="#contact">
             <i class="fa-solid fa-paper-plane"></i>
-            <span>Me Contacter</span>
+            <span>Me contacter</span>
           </a>
         </li>
       </ul>
@@ -98,7 +97,7 @@
         <a
           href="./assets/CV_Lucas_VIGILE.pdf"
           download
-          class="inline-flex items-center justify-center gap-2 rounded-2xl bg-red-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-500/20 transition duration-300 hover:-translate-y-1 hover:bg-red-400 hover:shadow-red-500/30"
+          class="cv-btn"
         >
           <i class="fa-solid fa-file-arrow-down"></i>
           <span>Télécharger CV</span>
@@ -115,38 +114,39 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero reveal" aria-label="Présentation">
       <div class="container">
         <div class="hero-inner">
           <div class="hero-text">
             <span class="hero-kicker">Portfolio • Cybersécurité • Développement web</span>
 
-            <h1 class="leading-tight">
+            <h1>
               Lucas<br />
               <span class="accent">Étudiant</span><br />
               Développeur Web<br />
               & Mobile
             </h1>
 
-            <p>
-              Passionné par la cybersécurité et le développement front/back,
-              je crée des interfaces modernes, propres et performantes.
+            <p class="hero-description">
+              Étudiant passionné par la cybersécurité et le développement web,
+              je conçois des interfaces modernes, fluides et professionnelles
+              avec une attention particulière portée à l’expérience utilisateur,
+              au design et à la performance.
             </p>
 
+            <div class="hero-badges">
+              <span><i class="fa-solid fa-shield-halved"></i> Cybersécurité</span>
+              <span><i class="fa-solid fa-code"></i> Front / Back</span>
+              <span><i class="fa-solid fa-mobile-screen-button"></i> Mobile</span>
+            </div>
+
             <div class="hero-cta">
-              <a
-                href="#projets"
-                class="inline-flex items-center justify-center gap-2 rounded-2xl bg-red-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-500/20 transition duration-300 hover:-translate-y-1 hover:bg-red-400"
-              >
+              <a href="#projets" class="btn-primary">
                 <i class="fa-solid fa-rocket"></i>
                 Voir mes projets
               </a>
 
-              <a
-                href="#contact"
-                class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-bold text-white backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/10"
-              >
+              <a href="#contact" class="btn-secondary">
                 <i class="fa-solid fa-envelope"></i>
                 Me contacter
               </a>
@@ -154,12 +154,10 @@
           </div>
 
           <div class="hero-media">
-            <div
-              class="relative mx-auto flex h-[220px] w-[220px] items-center justify-center rounded-full bg-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.25)] ring-1 ring-white/10 md:h-[240px] md:w-[240px]"
-            >
-              <div
-                class="pointer-events-none absolute inset-[-12px] rounded-full bg-blue-500/10 blur-2xl"
-              ></div>
+            <div class="hero-photo-wrapper">
+              <span class="hero-orbit hero-orbit-1"></span>
+              <span class="hero-orbit hero-orbit-2"></span>
+              <span class="hero-glow"></span>
 
               <img
                 src="./assets/avatar.png"
@@ -168,7 +166,7 @@
                 height="240"
                 loading="eager"
                 decoding="async"
-                class="relative z-10 h-full w-full rounded-full border-4 border-blue-400/40 object-cover object-top shadow-[0_0_0_8px_rgba(96,165,250,0.06),0_0_25px_rgba(96,165,250,0.15)] transition duration-300 hover:scale-[1.02]"
+                class="hero-photo"
               />
             </div>
           </div>
@@ -176,7 +174,6 @@
       </div>
     </section>
 
-    <!-- PROJETS -->
     <section id="projets" class="section reveal" aria-labelledby="titre-projets">
       <div class="container">
         <div class="section-header">
@@ -195,35 +192,35 @@
           <article class="card project" data-tags="web" tabindex="0">
             <img
               src="./assets/obi29.png"
-              alt="Aperçu vitrine KW-Océan"
+              alt="Aperçu site vitrine immobilier"
               loading="lazy"
               class="h-[180px] w-full rounded-xl object-cover"
             />
             <div class="card-body">
               <h3>Site vitrine KW Ocean</h3>
               <p>
-                Site immobilier responsive avec animations, formulaire de contact
-                et navigation fluide.
+                Site immobilier responsive avec animations, navigation fluide,
+                valorisation des biens et expérience utilisateur soignée.
               </p>
               <div class="card-actions">
                 <a
                   href="https://github.com/Styxline29"
                   target="_blank"
                   rel="noreferrer noopener"
-                  class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/10"
+                  class="project-code"
                 >
                   <i class="fa-brands fa-github"></i>
                   Code
                 </a>
 
                 <a
-                  href="#"
+                  href="https://github.com/Styxline29/Portfolio"
                   target="_blank"
                   rel="noreferrer noopener"
-                  class="inline-flex items-center gap-2 rounded-xl bg-red-500 px-4 py-2 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-red-400"
+                  class="project-link"
                 >
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  Démo
+                  Voir le projet
                 </a>
               </div>
             </div>
@@ -232,22 +229,22 @@
           <article class="card project" data-tags="cyber" tabindex="0">
             <img
               src="./assets/fivem.jpg"
-              alt="Aperçu du script"
+              alt="Aperçu Script FiveM"
               loading="lazy"
               class="h-[180px] w-full rounded-xl object-cover"
             />
             <div class="card-body">
               <h3>Script FiveM</h3>
               <p>
-                Script RageUI pour enrichir un serveur GTA RP avec de nouvelles
-                fonctionnalités.
+                Développement d’un script RageUI destiné à enrichir un serveur GTA RP
+                avec une interface claire et des fonctionnalités immersives.
               </p>
               <div class="card-actions">
                 <a
                   href="https://github.com/Styxline29"
                   target="_blank"
                   rel="noreferrer noopener"
-                  class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/10"
+                  class="project-code"
                 >
                   <i class="fa-brands fa-github"></i>
                   Code
@@ -259,22 +256,22 @@
           <article class="card project" data-tags="school" tabindex="0">
             <img
               src="./assets/paneladmin.png"
-              alt="Aperçu Dashboard d'administration"
+              alt="Aperçu dashboard d'administration"
               loading="lazy"
               class="h-[180px] w-full rounded-xl object-cover"
             />
             <div class="card-body">
               <h3>Dashboard d'administration</h3>
               <p>
-                Gestion de contenus avec PHP/MySQL, interface claire,
-                authentification et rôles.
+                Interface de gestion en PHP/MySQL avec modification de contenus,
+                authentification et organisation claire pour l’administration d’un site.
               </p>
               <div class="card-actions">
                 <a
                   href="https://github.com/Styxline29"
                   target="_blank"
                   rel="noreferrer noopener"
-                  class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/10"
+                  class="project-code"
                 >
                   <i class="fa-brands fa-github"></i>
                   Code
@@ -286,7 +283,6 @@
       </div>
     </section>
 
-    <!-- COMPÉTENCES -->
     <section id="competences" class="section reveal" aria-labelledby="titre-competences">
       <div class="container">
         <div class="section-header skills-header">
@@ -383,7 +379,6 @@
             <h3>Bash</h3>
           </article>
 
-          <!-- AJOUTS DEMANDÉS -->
           <article class="skill-card-tailwind group">
             <span class="skill-overflow-tailwind"></span>
             <div class="skill-icon-tailwind text-cyan-300">
@@ -419,14 +414,14 @@
       </div>
     </section>
 
-    <!-- EXPÉRIENCE -->
     <section id="experience" class="section reveal" aria-labelledby="titre-experience">
       <div class="container">
         <div class="section-header">
           <h2 id="titre-experience"><i class="fa-solid fa-briefcase"></i> Expériences</h2>
           <p>
-            Stage 2025 : création de sites pour Obi29, Minitaux Bretagne,
-            Minitaux Assurance et landing pages.
+            Stage 2025 en développement web : création de sites vitrines,
+            intégration front-end, optimisation UX/UI, responsive design
+            et amélioration des performances pour plusieurs entreprises.
           </p>
         </div>
 
@@ -435,29 +430,44 @@
             <span class="tl-date">2025</span>
             <h3>Stagiaire – Développement Web</h3>
             <p>
-              Intégration de sites vitrines, optimisation des performances et mise
-              en place de formulaires.
+              Réalisation de sites web pour plusieurs structures, intégration HTML/CSS/JS,
+              amélioration de l’interface utilisateur, responsive design et optimisation
+              des performances sur différents projets professionnels.
             </p>
           </article>
 
           <article class="tl-item">
-            <span class="tl-date">2009 → 2025</span>
+            <span class="tl-date">Depuis plusieurs années</span>
             <h3>Projets personnels</h3>
             <p>
-              Minecraft, GTA RP, Garry’s Mod, scripts, UI et développement autour
-              de différents environnements.
+              Développement de projets autour du web, du scripting, de l’interface utilisateur
+              et d’environnements comme Minecraft, FiveM et Garry’s Mod, avec une forte
+              curiosité technique et un apprentissage continu.
             </p>
           </article>
+        </div>
+
+        <div class="recruit-card">
+          <h3>Pourquoi me contacter ?</h3>
+          <p>
+            Je recherche des opportunités me permettant de progresser en développement web
+            et en cybersécurité, tout en apportant une vraie rigueur technique et une envie d’apprendre.
+          </p>
+
+          <div class="recruit-points">
+            <span><i class="fa-solid fa-check"></i> Intégration front-end propre et responsive</span>
+            <span><i class="fa-solid fa-check"></i> Sensibilité UX/UI et présentation visuelle</span>
+            <span><i class="fa-solid fa-check"></i> Curiosité technique et progression continue</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section reveal" aria-labelledby="titre-contact">
       <div class="container">
         <div class="section-header">
           <h2 id="titre-contact"><i class="fa-solid fa-paper-plane"></i> Contact</h2>
-          <p>Un projet, une question ? Écrivez-moi.</p>
+          <p>Un projet, une question ou une opportunité ? Écrivez-moi.</p>
         </div>
 
         <form class="contact-form" action="https://formspree.io/f/xxxxxxxx" method="POST">
@@ -488,10 +498,7 @@
             ></textarea>
           </div>
 
-          <button
-            type="submit"
-            class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-red-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-500/20 transition duration-300 hover:-translate-y-1 hover:bg-red-400 sm:w-auto"
-          >
+          <button type="submit" class="contact-submit">
             <i class="fa-solid fa-paper-plane"></i>
             Envoyer
           </button>
