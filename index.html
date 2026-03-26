@@ -21,10 +21,17 @@
     href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
     rel="stylesheet"
   />
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="./index.css" />
 </head>
 
@@ -105,70 +112,74 @@
       <div class="hero-spotlight" id="heroSpotlight"></div>
 
       <div class="container">
-        <div class="hero-inner" id="heroInteractive">
-          <div class="hero-text scroll-animate" data-animate="fade-up">
-            <span class="hero-kicker">Portfolio • Cybersécurité • Développement web</span>
+        <div class="row align-items-center gy-5 hero-bootstrap-row" id="heroInteractive">
+          <div class="col-12 col-lg-7">
+            <div class="hero-text scroll-animate" data-animate="fade-up">
+              <span class="hero-kicker">Portfolio • Cybersécurité • Développement web</span>
 
-            <h1>
-              Lucas<br />
-              <span class="accent">Étudiant</span><br />
-              Développeur Web<br />
-              & Mobile
-            </h1>
+              <h1>
+                Lucas<br />
+                <span class="accent">Étudiant</span><br />
+                Développeur Web<br />
+                & Mobile
+              </h1>
 
-            <p class="hero-description">
-              J’imagine et développe des interfaces modernes, immersives et performantes,
-              avec une attention particulière portée à l’expérience utilisateur, à la fluidité
-              et à la qualité visuelle sur desktop comme sur mobile.
-            </p>
+              <p class="hero-description">
+                J’imagine et développe des interfaces modernes, immersives et performantes,
+                avec une attention particulière portée à l’expérience utilisateur, à la fluidité
+                et à la qualité visuelle sur desktop comme sur mobile.
+              </p>
 
-            <div class="hero-badges">
-              <span class="interactive-chip"><i class="fa-solid fa-shield-halved"></i> Cybersécurité</span>
-              <span class="interactive-chip"><i class="fa-solid fa-code"></i> Front / Back</span>
-              <span class="interactive-chip"><i class="fa-solid fa-mobile-screen-button"></i> Mobile</span>
-            </div>
+              <div class="hero-badges">
+                <span class="interactive-chip"><i class="fa-solid fa-shield-halved"></i> Cybersécurité</span>
+                <span class="interactive-chip"><i class="fa-solid fa-code"></i> Front / Back</span>
+                <span class="interactive-chip"><i class="fa-solid fa-mobile-screen-button"></i> Mobile</span>
+              </div>
 
-            <div class="hero-cta">
-              <a href="#projets" class="btn-primary magnetic-btn">
-                <i class="fa-solid fa-rocket"></i>
-                Voir mes projets
-              </a>
+              <div class="d-flex flex-wrap gap-3 hero-cta">
+                <a href="#projets" class="btn-primary magnetic-btn">
+                  <i class="fa-solid fa-rocket"></i>
+                  Voir mes projets
+                </a>
 
-              <a href="#contact" class="btn-secondary magnetic-btn">
-                <i class="fa-solid fa-envelope"></i>
-                Me contacter
-              </a>
+                <a href="#contact" class="btn-secondary magnetic-btn">
+                  <i class="fa-solid fa-envelope"></i>
+                  Me contacter
+                </a>
+              </div>
             </div>
           </div>
 
-          <div class="hero-side scroll-animate" data-animate="fade-left">
-            <div class="hero-panel">
-              <div class="hero-avatar-wrap">
-                <img
-                  src="./assets/avatar.png"
-                  alt="Photo de Lucas Vigile"
-                  class="hero-photo"
-                  width="320"
-                  height="320"
-                  loading="eager"
-                  decoding="async"
-                />
+          <div class="col-12 col-lg-5">
+            <div class="hero-side scroll-animate" data-animate="fade-left">
+              <div class="hero-panel mx-auto">
+                <div class="hero-avatar-wrap">
+                  <img
+                    src="./assets/avatar.png"
+                    alt="Photo de Lucas Vigile"
+                    class="hero-photo"
+                    width="320"
+                    height="320"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
+
+                <button class="floating-card floating-card-top" type="button">
+                  <i class="fa-solid fa-code"></i>
+                  <span>UI moderne</span>
+                </button>
+
+                <button class="floating-card floating-card-bottom" type="button">
+                  <i class="fa-solid fa-bolt"></i>
+                  <span>Performance</span>
+                </button>
+
+                <button class="floating-card floating-card-right" type="button">
+                  <i class="fa-solid fa-layer-group"></i>
+                  <span>Expérience fluide</span>
+                </button>
               </div>
-
-              <button class="floating-card floating-card-top" type="button">
-                <i class="fa-solid fa-code"></i>
-                <span>UI moderne</span>
-              </button>
-
-              <button class="floating-card floating-card-bottom" type="button">
-                <i class="fa-solid fa-bolt"></i>
-                <span>Performance</span>
-              </button>
-
-              <button class="floating-card floating-card-right" type="button">
-                <i class="fa-solid fa-layer-group"></i>
-                <span>Expérience fluide</span>
-              </button>
             </div>
           </div>
         </div>
@@ -189,103 +200,109 @@
           <button class="chip" data-filter="school" role="tab" aria-selected="false">Études</button>
         </div>
 
-        <div class="grid projects" id="projectsGrid">
-          <article class="card project tilt-card scroll-animate" data-animate="fade-up" data-tags="web" tabindex="0">
-            <div class="project-image-wrap">
-              <img
-                src="./assets/obi29.png"
-                alt="Aperçu site vitrine immobilier"
-                loading="lazy"
-                class="project-image"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Site vitrine KW Ocean</h3>
-              <p>
-                Site immobilier responsive avec animations, navigation fluide,
-                valorisation des biens et expérience utilisateur soignée.
-              </p>
-              <div class="card-actions">
-                <a
-                  href="https://github.com/Styxline29"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="project-code"
-                >
-                  <i class="fa-brands fa-github"></i>
-                  Code
-                </a>
-
-                <a
-                  href="https://github.com/Styxline29/Portfolio"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="project-link"
-                >
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  Voir le projet
-                </a>
+        <div class="row g-4" id="projectsGrid">
+          <div class="col-12 col-md-6 col-xl-4 project-item" data-tags="web">
+            <article class="card project tilt-card scroll-animate h-100" data-animate="fade-up" tabindex="0">
+              <div class="project-image-wrap">
+                <img
+                  src="./assets/obi29.png"
+                  alt="Aperçu site vitrine immobilier"
+                  loading="lazy"
+                  class="project-image"
+                />
               </div>
-            </div>
-          </article>
+              <div class="card-body">
+                <h3>Site vitrine KW Ocean</h3>
+                <p>
+                  Site immobilier responsive avec animations, navigation fluide,
+                  valorisation des biens et expérience utilisateur soignée.
+                </p>
+                <div class="card-actions">
+                  <a
+                    href="https://github.com/Styxline29"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="project-code"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                    Code
+                  </a>
 
-          <article class="card project tilt-card scroll-animate" data-animate="fade-up" data-tags="cyber" tabindex="0">
-            <div class="project-image-wrap">
-              <img
-                src="./assets/fivem.jpg"
-                alt="Aperçu Script FiveM"
-                loading="lazy"
-                class="project-image"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Script FiveM</h3>
-              <p>
-                Développement d’un script RageUI destiné à enrichir un serveur GTA RP
-                avec une interface claire et des fonctionnalités immersives.
-              </p>
-              <div class="card-actions">
-                <a
-                  href="https://github.com/Styxline29"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="project-code"
-                >
-                  <i class="fa-brands fa-github"></i>
-                  Code
-                </a>
+                  <a
+                    href="https://github.com/Styxline29/Portfolio"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="project-link"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    Voir le projet
+                  </a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
 
-          <article class="card project tilt-card scroll-animate" data-animate="fade-up" data-tags="school" tabindex="0">
-            <div class="project-image-wrap">
-              <img
-                src="./assets/paneladmin.png"
-                alt="Aperçu dashboard d'administration"
-                loading="lazy"
-                class="project-image"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Dashboard d'administration</h3>
-              <p>
-                Interface de gestion en PHP/MySQL avec modification de contenus,
-                authentification et organisation claire pour l’administration d’un site.
-              </p>
-              <div class="card-actions">
-                <a
-                  href="https://github.com/Styxline29"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="project-code"
-                >
-                  <i class="fa-brands fa-github"></i>
-                  Code
-                </a>
+          <div class="col-12 col-md-6 col-xl-4 project-item" data-tags="cyber">
+            <article class="card project tilt-card scroll-animate h-100" data-animate="fade-up" tabindex="0">
+              <div class="project-image-wrap">
+                <img
+                  src="./assets/fivem.jpg"
+                  alt="Aperçu Script FiveM"
+                  loading="lazy"
+                  class="project-image"
+                />
               </div>
-            </div>
-          </article>
+              <div class="card-body">
+                <h3>Script FiveM</h3>
+                <p>
+                  Développement d’un script RageUI destiné à enrichir un serveur GTA RP
+                  avec une interface claire et des fonctionnalités immersives.
+                </p>
+                <div class="card-actions">
+                  <a
+                    href="https://github.com/Styxline29"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="project-code"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                    Code
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-4 project-item" data-tags="school">
+            <article class="card project tilt-card scroll-animate h-100" data-animate="fade-up" tabindex="0">
+              <div class="project-image-wrap">
+                <img
+                  src="./assets/paneladmin.png"
+                  alt="Aperçu dashboard d'administration"
+                  loading="lazy"
+                  class="project-image"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Dashboard d'administration</h3>
+                <p>
+                  Interface de gestion en PHP/MySQL avec modification de contenus,
+                  authentification et organisation claire pour l’administration d’un site.
+                </p>
+                <div class="card-actions">
+                  <a
+                    href="https://github.com/Styxline29"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="project-code"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                    Code
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -303,35 +320,35 @@
           <button class="skill-chip" data-skill-filter="soft" role="tab" aria-selected="false">Soft skills</button>
         </div>
 
-        <div class="skills-grid" id="skillsGrid">
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-orange-500"><i class="fa-brands fa-html5"></i></div><h3>HTML5</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-blue-500"><i class="fa-brands fa-css3-alt"></i></div><h3>CSS3</h3></article>
-          <article class="skill-card-tailwind skill-card-active scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-yellow-400"><i class="fa-brands fa-js"></i></div><h3>JavaScript</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-fuchsia-400"><i class="fa-brands fa-php"></i></div><h3>PHP</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-sky-300"><i class="fa-solid fa-database"></i></div><h3>MySQL</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-green-400"><i class="fa-brands fa-python"></i></div><h3>Python</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-red-400"><i class="fa-brands fa-java"></i></div><h3>Java</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-violet-300"><i class="fa-solid fa-code"></i></div><h3>C#</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-blue-300"><i class="fa-solid fa-terminal"></i></div><h3>C / C++</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-purple-300"><i class="fa-solid fa-gamepad"></i></div><h3>Lua</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-slate-300"><i class="fa-solid fa-chevron-right"></i></div><h3>Bash</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-cyan-300"><i class="fa-brands fa-wordpress"></i></div><h3>WordPress</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-indigo-300"><i class="fa-solid fa-layer-group"></i></div><h3>RageUI</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-emerald-300"><i class="fa-solid fa-bars-progress"></i></div><h3>PMenu</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-amber-300"><i class="fa-solid fa-cube"></i></div><h3>JavaScript (Minecraft)</h3></article>
+        <div class="row g-4" id="skillsGrid">
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-orange-500"><i class="fa-brands fa-html5"></i></div><h3>HTML5</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-blue-500"><i class="fa-brands fa-css3-alt"></i></div><h3>CSS3</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind skill-card-active scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-yellow-400"><i class="fa-brands fa-js"></i></div><h3>JavaScript</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-fuchsia-400"><i class="fa-brands fa-php"></i></div><h3>PHP</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-sky-300"><i class="fa-solid fa-database"></i></div><h3>MySQL</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-green-400"><i class="fa-brands fa-python"></i></div><h3>Python</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-red-400"><i class="fa-brands fa-java"></i></div><h3>Java</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-violet-300"><i class="fa-solid fa-code"></i></div><h3>C#</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-blue-300"><i class="fa-solid fa-terminal"></i></div><h3>C / C++</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-purple-300"><i class="fa-solid fa-gamepad"></i></div><h3>Lua</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-slate-300"><i class="fa-solid fa-chevron-right"></i></div><h3>Bash</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-cyan-300"><i class="fa-brands fa-wordpress"></i></div><h3>WordPress</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-indigo-300"><i class="fa-solid fa-layer-group"></i></div><h3>RageUI</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-emerald-300"><i class="fa-solid fa-bars-progress"></i></div><h3>PMenu</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-amber-300"><i class="fa-solid fa-cube"></i></div><h3>JavaScript (Minecraft)</h3></article></div>
 
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-excel"><i class="fa-solid fa-file-excel"></i></div><h3>Excel</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-word"><i class="fa-solid fa-file-word"></i></div><h3>Word</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-powerpoint"><i class="fa-solid fa-file-powerpoint"></i></div><h3>PowerPoint</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-outlook"><i class="fa-solid fa-envelope"></i></div><h3>Outlook</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="hard" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-teams"><i class="fa-solid fa-users"></i></div><h3>Teams</h3></article>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-excel"><i class="fa-solid fa-file-excel"></i></div><h3>Excel</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-word"><i class="fa-solid fa-file-word"></i></div><h3>Word</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-powerpoint"><i class="fa-solid fa-file-powerpoint"></i></div><h3>PowerPoint</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-outlook"><i class="fa-solid fa-envelope"></i></div><h3>Outlook</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-teams"><i class="fa-solid fa-users"></i></div><h3>Teams</h3></article></div>
 
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-green-400"><i class="fa-solid fa-comments"></i></div><h3>Communication</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-blue-300"><i class="fa-solid fa-people-group"></i></div><h3>Travail d’équipe</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-amber-300"><i class="fa-solid fa-lightbulb"></i></div><h3>Créativité</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-red-400"><i class="fa-solid fa-bullseye"></i></div><h3>Rigueur</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-cyan-300"><i class="fa-solid fa-book-open-reader"></i></div><h3>Apprentissage rapide</h3></article>
-          <article class="skill-card-tailwind scroll-animate skill-item" data-skill-tags="soft" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-violet-300"><i class="fa-solid fa-clock"></i></div><h3>Organisation</h3></article>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-green-400"><i class="fa-solid fa-comments"></i></div><h3>Communication</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-blue-300"><i class="fa-solid fa-people-group"></i></div><h3>Travail d’équipe</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-amber-300"><i class="fa-solid fa-lightbulb"></i></div><h3>Créativité</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-red-400"><i class="fa-solid fa-bullseye"></i></div><h3>Rigueur</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-cyan-300"><i class="fa-solid fa-book-open-reader"></i></div><h3>Apprentissage rapide</h3></article></div>
+          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-violet-300"><i class="fa-solid fa-clock"></i></div><h3>Organisation</h3></article></div>
         </div>
       </div>
     </section>
@@ -446,6 +463,7 @@
   </button>
 
   <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./index.js"></script>
 </body>
 </html>

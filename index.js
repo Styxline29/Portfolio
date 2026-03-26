@@ -67,7 +67,7 @@ if (themeToggle) {
 }
 
 const chips = document.querySelectorAll('.chip');
-const projects = document.querySelectorAll('.project');
+const projectItems = document.querySelectorAll('.project-item');
 
 chips.forEach((chip) => {
   chip.addEventListener('click', () => {
@@ -81,10 +81,10 @@ chips.forEach((chip) => {
 
     const filter = chip.dataset.filter;
 
-    projects.forEach((card) => {
-      const tags = card.dataset.tags.split(',');
+    projectItems.forEach((item) => {
+      const tags = item.dataset.tags.split(',');
       const match = filter === 'all' || tags.includes(filter);
-      card.style.display = match ? '' : 'none';
+      item.style.display = match ? '' : 'none';
     });
   });
 });
@@ -104,10 +104,10 @@ skillChips.forEach((chip) => {
 
     const filter = chip.dataset.skillFilter;
 
-    skillItems.forEach((card) => {
-      const tags = card.dataset.skillTags.split(',');
+    skillItems.forEach((item) => {
+      const tags = item.dataset.skillTags.split(',');
       const match = filter === 'all' || tags.includes(filter);
-      card.style.display = match ? '' : 'none';
+      item.style.display = match ? '' : 'none';
     });
   });
 });

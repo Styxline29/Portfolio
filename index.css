@@ -364,14 +364,10 @@ textarea {
   transition: left 0.08s linear, top 0.08s linear;
 }
 
-.hero-inner {
+.hero-bootstrap-row {
+  min-height: 78vh;
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
-  align-items: center;
-  gap: 56px;
-  width: 100%;
 }
 
 .hero-text {
@@ -611,11 +607,14 @@ textarea {
   backdrop-filter: blur(10px);
 }
 
-.grid.projects {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  align-items: start;
+.project-item,
+.skill-item {
+  display: flex;
+}
+
+.project-item .card,
+.skill-item .skill-card-tailwind {
+  width: 100%;
 }
 
 .card {
@@ -747,13 +746,6 @@ textarea {
 
 .skills-header {
   margin-bottom: 24px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 16px;
-  align-items: stretch;
 }
 
 .skill-card-tailwind {
@@ -1058,6 +1050,13 @@ html.lenis body {
   filter: blur(0);
 }
 
+#projectsGrid .col-12,
+#skillsGrid .col-6,
+#skillsGrid .col-md-4,
+#skillsGrid .col-xl-3 {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -1069,25 +1068,8 @@ html.lenis body {
     width: min(100% - 42px, 1180px);
   }
 
-  .hero-inner {
-    grid-template-columns: minmax(0, 1fr) 360px;
-    gap: 40px;
-  }
-
   .hero-text h1 {
     font-size: clamp(42px, 4.5vw, 64px);
-  }
-
-  .grid.projects {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .timeline {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -1101,15 +1083,14 @@ html.lenis body {
     padding: 50px 0 30px;
   }
 
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 34px;
+  .hero-bootstrap-row {
+    min-height: auto;
   }
 
   .hero-text {
     max-width: 100%;
     margin: 0 auto;
+    text-align: center;
   }
 
   .hero-text h1 {
@@ -1158,10 +1139,6 @@ html.lenis body {
 
   .floating-card-right {
     display: none;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -1261,22 +1238,12 @@ html.lenis body {
     display: none;
   }
 
-  .grid.projects,
-  .timeline {
-    grid-template-columns: 1fr;
-  }
-
   .project-image {
     height: 200px;
   }
 
   .project p {
     min-height: auto;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
   }
 
   .contact-form {
