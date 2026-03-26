@@ -13,7 +13,8 @@ const burgerBtn = document.getElementById('burgerBtn');
 const navMenu = document.getElementById('navMenu');
 const themeToggle = document.getElementById('themeToggle');
 const yearSpan = document.getElementById('year');
-const hero3d = document.getElementById('hero3d');
+const heroInteractive = document.getElementById('heroInteractive');
+const heroSpotlight = document.getElementById('heroSpotlight');
 
 const onScroll = () => {
   const scrolled = window.scrollY > 6;
@@ -100,68 +101,80 @@ chips.forEach((chip) => {
   });
 });
 
-const revealElements = document.querySelectorAll('.reveal');
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-
-revealElements.forEach((element) => observer.observe(element));
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
 
 backToTop?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
+if (window.Lenis) {
+  const lenis = new Lenis({
+    duration: 1.05,
+    smoothWheel: true,
+    smoothTouch: false
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
 }
 
-if (hero3d && window.innerWidth > 992) {
-  const frontLayer = hero3d.querySelector('.hero-layer-front');
-  const backLayer = hero3d.querySelector('.hero-layer-back');
+if (heroInteractive && heroSpotlight && window.innerWidth > 992) {
+  const panel = heroInteractive.querySelector('.hero-panel');
+  const text = heroInteractive.querySelector('.hero-text');
 
-  hero3d.addEventListener('mousemove', (event) => {
-    const rect = hero3d.getBoundingClientRect();
+  heroInteractive.addEventListener('mousemove', (event) => {
+    const rect = heroInteractive.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateY = ((x - centerX) / centerX) * 7;
-    const rotateX = ((centerY - y) / centerY) * 5;
+    const moveX = (x - centerX) / centerX;
+    const moveY = (y - centerY) / centerY;
 
-    hero3d.style.transform = `perspective(1400px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    heroSpotlight.style.left = `${x}px`;
+    heroSpotlight.style.top = `${y}px`;
 
-    if (frontLayer) {
-      frontLayer.style.transform = `translateZ(40px) translateX(${rotateY * 1.8}px) translateY(${rotateX * -1.8}px)`;
+    if (panel) {
+      panel.style.transform = `translate3d(${moveX * 12}px, ${moveY * 12}px, 0)`;
     }
 
-    if (backLayer) {
-      backLayer.style.transform = `translateZ(10px) translateX(${rotateY * 1.1}px) translateY(${rotateX * -1.1}px)`;
+    if (text) {
+      text.style.transform = `translate3d(${moveX * -8}px, ${moveY * -8}px, 0)`;
     }
   });
 
-  hero3d.addEventListener('mouseleave', () => {
-    hero3d.style.transform = 'perspective(1400px) rotateX(0deg) rotateY(0deg)';
-
-    if (frontLayer) {
-      frontLayer.style.transform = 'translateZ(40px)';
-    }
-
-    if (backLayer) {
-      backLayer.style.transform = 'translateZ(10px)';
-    }
+  heroInteractive.addEventListener('mouseleave', () => {
+    if (panel) panel.style.transform = 'translate3d(0,0,0)';
+    if (text) text.style.transform = 'translate3d(0,0,0)';
   });
 }
+
+const scrollTargets = document.querySelectorAll('.scroll-animate');
+
+const visibilityObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      } else {
+        entry.target.classList.remove('is-visible');
+      }
+    });
+  },
+  {
+    threshold: 0.18
+  }
+);
+
+scrollTargets.forEach((item) => visibilityObserver.observe(item));
 
 const tiltCards = document.querySelectorAll('.tilt-card');
 
@@ -184,5 +197,23 @@ tiltCards.forEach((card) => {
 
   card.addEventListener('mouseleave', () => {
     card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0)';
+  });
+});
+
+const magneticButtons = document.querySelectorAll('.magnetic-btn');
+
+magneticButtons.forEach((button) => {
+  if (window.innerWidth <= 992) return;
+
+  button.addEventListener('mousemove', (event) => {
+    const rect = button.getBoundingClientRect();
+    const x = event.clientX - rect.left - rect.width / 2;
+    const y = event.clientY - rect.top - rect.height / 2;
+
+    button.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
+  });
+
+  button.addEventListener('mouseleave', () => {
+    button.style.transform = 'translate(0, 0)';
   });
 });
