@@ -116,8 +116,8 @@
   <main>
     <section class="hero reveal" aria-label="Présentation">
       <div class="container">
-        <div class="hero-inner">
-          <div class="hero-text">
+        <div class="hero-inner hero-3d" id="hero3d">
+          <div class="hero-text hero-layer hero-layer-front">
             <span class="hero-kicker">Portfolio • Cybersécurité • Développement web</span>
 
             <h1>
@@ -128,10 +128,9 @@
             </h1>
 
             <p class="hero-description">
-              Étudiant passionné par la cybersécurité et le développement web,
-              je conçois des interfaces modernes, fluides et professionnelles
-              avec une attention particulière portée à l’expérience utilisateur,
-              au design et à la performance.
+              J’imagine et développe des interfaces modernes, immersives et performantes,
+              avec une attention particulière portée à l’esthétique, à l’expérience utilisateur
+              et à la fluidité sur desktop comme sur mobile.
             </p>
 
             <div class="hero-badges">
@@ -153,21 +152,34 @@
             </div>
           </div>
 
-          <div class="hero-media">
-            <div class="hero-photo-wrapper">
-              <span class="hero-orbit hero-orbit-1"></span>
-              <span class="hero-orbit hero-orbit-2"></span>
-              <span class="hero-glow"></span>
+          <div class="hero-visual hero-layer hero-layer-back">
+            <div class="hero-card-3d">
+              <span class="hero-ring hero-ring-1"></span>
+              <span class="hero-ring hero-ring-2"></span>
+              <span class="hero-glow-orb hero-glow-red"></span>
+              <span class="hero-glow-orb hero-glow-blue"></span>
 
-              <img
-                src="./assets/avatar.png"
-                alt="Photo de Lucas Vigile"
-                width="240"
-                height="240"
-                loading="eager"
-                decoding="async"
-                class="hero-photo"
-              />
+              <div class="hero-photo-shell">
+                <img
+                  src="./assets/avatar.png"
+                  alt="Photo de Lucas Vigile"
+                  class="hero-photo"
+                  width="320"
+                  height="320"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="hero-mini-card hero-mini-card-1">
+                <i class="fa-solid fa-code"></i>
+                <span>UI moderne</span>
+              </div>
+
+              <div class="hero-mini-card hero-mini-card-2">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Performance</span>
+              </div>
             </div>
           </div>
         </div>

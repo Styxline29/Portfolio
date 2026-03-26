@@ -100,10 +100,6 @@ textarea {
   color: var(--accent);
 }
 
-/* =========================
-   PRELOADER
-========================= */
-
 #preloader {
   position: fixed;
   inset: 0;
@@ -128,16 +124,6 @@ textarea {
   border-top-color: var(--accent);
   animation: spin 0.9s linear infinite;
 }
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* =========================
-   HEADER / NAVBAR
-========================= */
 
 .site-header {
   position: sticky;
@@ -304,15 +290,13 @@ textarea {
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* =========================
-   HERO
-========================= */
-
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: 80px;
-  padding-bottom: 78px;
+  padding: 90px 0 70px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero::before,
@@ -320,82 +304,98 @@ textarea {
   content: "";
   position: absolute;
   border-radius: 999px;
-  filter: blur(90px);
-  opacity: 0.55;
+  filter: blur(110px);
   pointer-events: none;
+  opacity: 0.55;
 }
 
 .hero::before {
-  width: 320px;
-  height: 320px;
-  left: -70px;
-  top: 30px;
-  background: rgba(255, 75, 62, 0.18);
+  width: 340px;
+  height: 340px;
+  top: 80px;
+  left: -100px;
+  background: rgba(255, 75, 62, 0.22);
 }
 
 .hero::after {
-  width: 360px;
-  height: 360px;
-  right: -90px;
-  top: 10px;
-  background: rgba(93, 168, 255, 0.18);
+  width: 380px;
+  height: 380px;
+  right: -120px;
+  top: 40px;
+  background: rgba(93, 168, 255, 0.22);
 }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 720px) minmax(280px, 360px);
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 480px);
   align-items: center;
-  justify-content: space-between;
-  gap: 80px;
-  min-height: 74vh;
+  gap: 70px;
+  width: 100%;
+}
+
+.hero-3d {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.hero-layer {
+  transition: transform 0.22s ease-out;
+  will-change: transform;
+}
+
+.hero-layer-front {
+  transform: translateZ(40px);
+}
+
+.hero-layer-back {
+  transform: translateZ(10px);
 }
 
 .hero-text {
-  max-width: 720px;
+  max-width: 760px;
 }
 
 .hero-kicker {
   display: inline-block;
   margin-bottom: 18px;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .hero-text h1 {
-  margin: 0 0 22px;
-  max-width: 720px;
-  font-size: clamp(60px, 5.8vw, 92px);
-  line-height: 0.94;
+  margin: 0 0 20px;
+  font-size: clamp(54px, 5vw, 86px);
+  line-height: 0.95;
   letter-spacing: -0.05em;
 }
 
 .hero-description {
+  max-width: 640px;
   margin: 0 0 26px;
-  max-width: 700px;
   color: var(--muted);
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   line-height: 1.75;
 }
 
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin: 0 0 32px;
+  gap: 12px;
+  margin: 0 0 30px;
 }
 
 .hero-badges span {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 12px 18px;
+  gap: 8px;
+  padding: 12px 16px;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
-  font-size: 0.98rem;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .hero-cta {
@@ -448,90 +448,128 @@ textarea {
   background: rgba(93, 168, 255, 0.09);
 }
 
-.hero-media {
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-card-3d {
+  position: relative;
+  width: 420px;
+  height: 500px;
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(18, 27, 48, 0.78), rgba(8, 13, 24, 0.96));
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
   display: flex;
   align-items: center;
   justify-content: center;
+  transform-style: preserve-3d;
+  animation: heroFloat 5s ease-in-out infinite;
 }
 
-.hero-photo-wrapper {
+.hero-photo-shell {
   position: relative;
-  width: 350px;
-  height: 350px;
+  z-index: 3;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
   display: grid;
   place-items: center;
-}
-
-.hero-glow {
-  position: absolute;
-  inset: 18px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(93, 168, 255, 0.24), transparent 68%);
-  filter: blur(18px);
-}
-
-.hero-orbit {
-  position: absolute;
-  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
   border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.hero-orbit-1 {
-  inset: 0;
-  animation: spinOrbit 14s linear infinite;
-}
-
-.hero-orbit-2 {
-  inset: 16px;
-  border-style: dashed;
-  animation: spinOrbitReverse 18s linear infinite;
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.28),
+    0 0 40px rgba(93, 168, 255, 0.14);
+  transform: translateZ(55px);
 }
 
 .hero-photo {
-  position: relative;
-  z-index: 2;
-  width: 295px;
-  height: 295px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   object-position: top;
   border-radius: 50%;
-  border: 4px solid rgba(93, 168, 255, 0.3);
+  border: 4px solid rgba(93, 168, 255, 0.28);
   box-shadow:
     0 0 0 10px rgba(255, 255, 255, 0.03),
-    0 22px 50px rgba(0, 0, 0, 0.34),
-    0 0 46px rgba(93, 168, 255, 0.16);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+    0 0 40px rgba(93, 168, 255, 0.16);
 }
 
-.hero-photo:hover {
-  transform: scale(1.03);
-  box-shadow:
-    0 0 0 10px rgba(255, 255, 255, 0.04),
-    0 28px 56px rgba(0, 0, 0, 0.38),
-    0 0 58px rgba(93, 168, 255, 0.22);
+.hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  pointer-events: none;
 }
 
-@keyframes spinOrbit {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-ring-1 {
+  width: 330px;
+  height: 330px;
+  animation: spinOrbit 16s linear infinite;
 }
 
-@keyframes spinOrbitReverse {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+.hero-ring-2 {
+  width: 370px;
+  height: 370px;
+  border-style: dashed;
+  animation: spinOrbitReverse 22s linear infinite;
 }
 
-/* =========================
-   FILTERS / CHIPS
-========================= */
+.hero-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+}
+
+.hero-glow-red {
+  width: 130px;
+  height: 130px;
+  top: 55px;
+  left: 45px;
+  background: rgba(255, 75, 62, 0.26);
+}
+
+.hero-glow-blue {
+  width: 150px;
+  height: 150px;
+  bottom: 50px;
+  right: 40px;
+  background: rgba(93, 168, 255, 0.24);
+}
+
+.hero-mini-card {
+  position: absolute;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  color: var(--text);
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.hero-mini-card-1 {
+  top: 70px;
+  right: -22px;
+  transform: translateZ(70px);
+}
+
+.hero-mini-card-2 {
+  bottom: 70px;
+  left: -20px;
+  transform: translateZ(70px);
+}
 
 .filters {
   display: flex;
@@ -564,10 +602,6 @@ textarea {
   border-color: transparent;
   box-shadow: 0 14px 26px rgba(255, 75, 62, 0.18);
 }
-
-/* =========================
-   CARDS / PROJECTS
-========================= */
 
 .card,
 .tl-item,
@@ -706,10 +740,6 @@ textarea {
   transform: translateY(-2px);
 }
 
-/* =========================
-   SKILLS
-========================= */
-
 .skills-header {
   margin-bottom: 24px;
 }
@@ -820,10 +850,6 @@ textarea {
   color: var(--text);
 }
 
-/* =========================
-   TIMELINE / RECRUIT
-========================= */
-
 .timeline {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -884,10 +910,6 @@ textarea {
   align-items: center;
   gap: 10px;
 }
-
-/* =========================
-   CONTACT
-========================= */
 
 .contact-form {
   max-width: 720px;
@@ -954,10 +976,6 @@ textarea:focus {
   box-shadow: 0 20px 36px rgba(255, 75, 62, 0.28);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 .footer {
   padding: 26px 0 34px;
   text-align: center;
@@ -968,10 +986,6 @@ textarea:focus {
 .footer a:hover {
   color: var(--text);
 }
-
-/* =========================
-   BACK TO TOP
-========================= */
 
 .back-to-top {
   position: fixed;
@@ -994,10 +1008,6 @@ textarea:focus {
   pointer-events: auto;
 }
 
-/* =========================
-   REVEAL
-========================= */
-
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -1009,9 +1019,39 @@ textarea:focus {
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(1deg) rotateY(-1deg);
+  }
+}
+
+@keyframes spinOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinOrbitReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 
 @media (max-width: 1200px) {
   .container {
@@ -1051,14 +1091,14 @@ textarea:focus {
   }
 
   .hero {
-    padding-top: 48px;
-    padding-bottom: 40px;
+    min-height: auto;
+    padding: 50px 0 30px;
   }
 
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 28px;
     text-align: center;
+    gap: 34px;
   }
 
   .hero-text {
@@ -1067,8 +1107,7 @@ textarea:focus {
   }
 
   .hero-text h1 {
-    font-size: clamp(42px, 7vw, 64px);
-    max-width: none;
+    font-size: clamp(38px, 8vw, 58px);
   }
 
   .hero-description {
@@ -1081,14 +1120,44 @@ textarea:focus {
     justify-content: center;
   }
 
-  .hero-photo-wrapper {
-    width: 280px;
-    height: 280px;
+  .hero-card-3d {
+    width: 320px;
+    height: 390px;
+  }
+
+  .hero-photo-shell {
+    width: 220px;
+    height: 220px;
   }
 
   .hero-photo {
-    width: 235px;
-    height: 235px;
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero-ring-1 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-ring-2 {
+    width: 290px;
+    height: 290px;
+  }
+
+  .hero-mini-card {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  .hero-mini-card-1 {
+    right: -10px;
+    top: 40px;
+  }
+
+  .hero-mini-card-2 {
+    left: -10px;
+    bottom: 40px;
   }
 
   .skills-grid {
@@ -1171,14 +1240,24 @@ textarea:focus {
     padding: 13px 18px;
   }
 
-  .hero-photo-wrapper {
-    width: 245px;
-    height: 245px;
+  .hero-card-3d {
+    width: 280px;
+    height: 340px;
+    border-radius: 26px;
+  }
+
+  .hero-photo-shell {
+    width: 190px;
+    height: 190px;
   }
 
   .hero-photo {
-    width: 205px;
-    height: 205px;
+    width: 165px;
+    height: 165px;
+  }
+
+  .hero-mini-card {
+    display: none;
   }
 
   .grid.projects,
