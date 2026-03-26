@@ -97,37 +97,39 @@ if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
 
-let lenisInstance = null;
+let lenis = null;
 
 if (window.Lenis) {
-  lenisInstance = new Lenis({
-    duration: 1.2,
+  lenis = new Lenis({
+    duration: 1.4,
+    easing: (t) => 1 - Math.pow(1 - t, 4),
     smoothWheel: true,
     smoothTouch: false
   });
 
   function raf(time) {
-    lenisInstance.raf(time);
+    lenis.raf(time);
     requestAnimationFrame(raf);
   }
 
   requestAnimationFrame(raf);
 }
 
-const scrollToTarget = (targetSelector) => {
-  const target = document.querySelector(targetSelector);
+const scrollToTarget = (selector) => {
+  const target = document.querySelector(selector);
   if (!target) return;
 
   const header = document.querySelector('.site-header');
-  const headerOffset = header ? header.offsetHeight + 12 : 0;
+  const offset = header ? header.offsetHeight + 16 : 16;
 
-  if (lenisInstance) {
-    lenisInstance.scrollTo(target, {
-      offset: -headerOffset,
-      duration: 1.2
+  if (lenis) {
+    lenis.scrollTo(target, {
+      offset: -offset,
+      duration: 1.4,
+      easing: (t) => 1 - Math.pow(1 - t, 4)
     });
   } else {
-    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({
       top,
       behavior: 'smooth'
@@ -135,9 +137,7 @@ const scrollToTarget = (targetSelector) => {
   }
 };
 
-const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-anchorLinks.forEach((link) => {
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {
     const href = link.getAttribute('href');
 
@@ -157,9 +157,14 @@ anchorLinks.forEach((link) => {
   });
 });
 
-backToTop?.addEventListener('click', () => {
-  if (lenisInstance) {
-    lenisInstance.scrollTo(0, { duration: 1.2 });
+backToTop?.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  if (lenis) {
+    lenis.scrollTo(0, {
+      duration: 1.4,
+      easing: (t) => 1 - Math.pow(1 - t, 4)
+    });
   } else {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
