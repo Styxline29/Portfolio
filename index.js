@@ -41,8 +41,6 @@ if (burgerBtn && navMenu) {
   });
 }
 
-const THEME_KEY = 'pref-theme';
-
 const updateThemeIcon = () => {
   if (!themeToggle) return;
   const icon = themeToggle.querySelector('i');
@@ -56,23 +54,10 @@ const updateThemeIcon = () => {
 const setTheme = (mode) => {
   const root = document.documentElement;
   root.classList.toggle('dark', mode === 'dark');
-  localStorage.setItem(THEME_KEY, mode);
   updateThemeIcon();
 };
 
-(() => {
-  const saved = localStorage.getItem(THEME_KEY);
-
-  if (saved) {
-    setTheme(saved);
-  } else {
-    const preferDark =
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    setTheme(preferDark ? 'dark' : 'light');
-  }
-})();
+setTheme('dark');
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
