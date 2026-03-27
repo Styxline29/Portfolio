@@ -283,17 +283,83 @@ magneticButtons.forEach((button) => {
   });
 });
 
+const customModal = document.getElementById('customModal');
+const customModalTitle = document.getElementById('customModalTitle');
+const customModalMessage = document.getElementById('customModalMessage');
+const customModalConfirm = document.getElementById('customModalConfirm');
+const customModalCancel = document.getElementById('customModalCancel');
+const customModalClose = document.getElementById('customModalClose');
 const demoUnavailableButtons = document.querySelectorAll('.demo-unavailable');
 
-demoUnavailableButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    alert(
-      "La version démo est actuellement en déployement merci de contacter l'administrateur du site web afin d'avoir plus de détails."
-    );
+let modalResolver = null;
 
-    const shouldRedirect = confirm(
-      "Souhaitez-vous être redirigé vers le GitHub du projet ?"
-    );
+const openCustomModal = ({
+  title = 'Information importante',
+  message = '',
+  confirmText = 'Continuer',
+  cancelText = 'Annuler',
+  showCancel = true
+}) => {
+  return new Promise((resolve) => {
+    modalResolver = resolve;
+
+    customModalTitle.textContent = title;
+    customModalMessage.textContent = message;
+    customModalConfirm.textContent = confirmText;
+    customModalCancel.textContent = cancelText;
+    customModalCancel.style.display = showCancel ? 'inline-flex' : 'none';
+
+    customModal.classList.add('is-open');
+    customModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  });
+};
+
+const closeCustomModal = (result = false) => {
+  customModal.classList.remove('is-open');
+  customModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+
+  if (modalResolver) {
+    modalResolver(result);
+    modalResolver = null;
+  }
+};
+
+customModalConfirm?.addEventListener('click', () => closeCustomModal(true));
+customModalCancel?.addEventListener('click', () => closeCustomModal(false));
+customModalClose?.addEventListener('click', () => closeCustomModal(false));
+
+customModal?.addEventListener('click', (event) => {
+  if (event.target.hasAttribute('data-close-modal')) {
+    closeCustomModal(false);
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && customModal?.classList.contains('is-open')) {
+    closeCustomModal(false);
+  }
+});
+
+demoUnavailableButtons.forEach((button) => {
+  button.addEventListener('click', async () => {
+    await openCustomModal({
+      title: 'Démo en cours de déploiement',
+      message:
+        "La version démo est actuellement en déploiement. Merci de contacter l’administrateur du site web afin d’obtenir davantage d’informations.",
+      confirmText: 'Compris',
+      showCancel: false
+    });
+
+    const shouldRedirect = await openCustomModal({
+      title: 'Accès au dépôt GitHub',
+      message:
+        "Souhaitez-vous être redirigé vers le GitHub du projet pour consulter davantage d’informations ?",
+      confirmText: 'Oui, ouvrir GitHub',
+      cancelText: 'Non, rester ici',
+      showCancel: true
+    });
 
     if (shouldRedirect) {
       const githubUrl = button.dataset.githubUrl || 'https://github.com/Styxline29/';

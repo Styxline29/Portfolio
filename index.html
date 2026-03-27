@@ -225,15 +225,14 @@
                     Code
                   </a>
 
-                  <a
-                    href="https://github.com/Styxline29/Portfolio"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="project-link"
+                  <button
+                    type="button"
+                    class="project-link demo-unavailable"
+                    data-github-url="https://github.com/Styxline29/Portfolio"
                   >
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    Voir le projet
-                  </a>
+                    Voir la démo
+                  </button>
                 </div>
               </div>
             </article>
@@ -476,6 +475,39 @@
   <button id="backToTop" class="back-to-top" aria-label="Revenir en haut">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
+
+  <div class="custom-modal" id="customModal" aria-hidden="true">
+    <div class="custom-modal-overlay" data-close-modal></div>
+
+    <div class="custom-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="customModalTitle">
+      <div class="custom-modal-glow"></div>
+
+      <div class="custom-modal-header">
+        <div class="custom-modal-badge">
+          <i class="fa-solid fa-gem"></i>
+          <span>Avertissement</span>
+        </div>
+
+        <button type="button" class="custom-modal-close" id="customModalClose" aria-label="Fermer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="custom-modal-body">
+        <h3 id="customModalTitle">Information importante</h3>
+        <p id="customModalMessage"></p>
+      </div>
+
+      <div class="custom-modal-actions" id="customModalActions">
+        <button type="button" class="modal-btn modal-btn-secondary" id="customModalCancel">
+          Annuler
+        </button>
+        <button type="button" class="modal-btn modal-btn-primary" id="customModalConfirm">
+          Continuer
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
