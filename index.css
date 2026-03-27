@@ -1169,18 +1169,25 @@ textarea:focus {
   position: relative;
   z-index: 2;
   display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  padding: 0 24px 24px;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 26px 26px;
 }
 
 .modal-btn {
-  min-width: 132px;
-  min-height: 52px;
-  border-radius: 16px;
+  width: 200px;
+  height: 56px;
+  border-radius: 18px;
   font-weight: 800;
   border: none;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
   transition:
     transform 0.22s ease,
     box-shadow 0.22s ease,
