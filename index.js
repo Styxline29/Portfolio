@@ -307,11 +307,15 @@ const openCustomModal = ({
     customModalMessage.textContent = message;
     customModalConfirm.textContent = confirmText;
     customModalCancel.textContent = cancelText;
-    customModalCancel.style.display = showCancel ? 'inline-flex' : 'none';
+    customModalCancel.style.display = showCancel ? 'inline-flex' : 'inline-flex';
 
     customModal.classList.add('is-open');
     customModal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
+
+    if (!showCancel) {
+      customModalCancel.style.display = 'none';
+    }
   });
 };
 
@@ -365,5 +369,47 @@ demoUnavailableButtons.forEach((button) => {
       const githubUrl = button.dataset.githubUrl || 'https://github.com/Styxline29/';
       window.open(githubUrl, '_blank', 'noopener,noreferrer');
     }
+  });
+});
+
+const modalButtons = document.querySelectorAll('.modal-btn');
+
+modalButtons.forEach((button) => {
+  if (!button.querySelector('span')) {
+    button.innerHTML = `<span>${button.innerHTML}</span>`;
+  }
+
+  if (window.innerWidth > 992) {
+    button.addEventListener('mousemove', (event) => {
+      const rect = button.getBoundingClientRect();
+      const x = event.clientX - rect.left - rect.width / 2;
+      const y = event.clientY - rect.top - rect.height / 2;
+
+      button.style.transform = `translate(${x * 0.10}px, ${y * 0.10}px)`;
+    });
+
+    button.addEventListener('mouseleave', () => {
+      button.style.transform = 'translate(0, 0)';
+    });
+  }
+
+  button.addEventListener('click', (event) => {
+    const rect = button.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    const size = Math.max(rect.width, rect.height) * 2.2;
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    ripple.className = 'modal-btn-ripple';
+    ripple.style.width = `${size}px`;
+    ripple.style.height = `${size}px`;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+
+    button.appendChild(ripple);
+
+    ripple.addEventListener('animationend', () => {
+      ripple.remove();
+    });
   });
 });
