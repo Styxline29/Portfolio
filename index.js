@@ -282,3 +282,22 @@ magneticButtons.forEach((button) => {
     button.style.transform = 'translate(0, 0)';
   });
 });
+
+const demoUnavailableButtons = document.querySelectorAll('.demo-unavailable');
+
+demoUnavailableButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    alert(
+      "La version démo est actuellement en déployement merci de contacter l'administrateur du site web afin d'avoir plus de détails."
+    );
+
+    const shouldRedirect = confirm(
+      "Souhaitez-vous être redirigé vers le GitHub du projet ?"
+    );
+
+    if (shouldRedirect) {
+      const githubUrl = button.dataset.githubUrl || 'https://github.com/Styxline29/';
+      window.open(githubUrl, '_blank', 'noopener,noreferrer');
+    }
+  });
+});
