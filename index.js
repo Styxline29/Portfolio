@@ -89,29 +89,6 @@ chips.forEach((chip) => {
   });
 });
 
-const skillChips = document.querySelectorAll('.skill-chip');
-const skillItems = document.querySelectorAll('.skill-item');
-
-skillChips.forEach((chip) => {
-  chip.addEventListener('click', () => {
-    skillChips.forEach((button) => {
-      button.classList.remove('active');
-      button.setAttribute('aria-selected', 'false');
-    });
-
-    chip.classList.add('active');
-    chip.setAttribute('aria-selected', 'true');
-
-    const filter = chip.dataset.skillFilter;
-
-    skillItems.forEach((item) => {
-      const tags = item.dataset.skillTags.split(',');
-      const match = filter === 'all' || tags.includes(filter);
-      item.style.display = match ? '' : 'none';
-    });
-  });
-});
-
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
@@ -414,38 +391,25 @@ modalButtons.forEach((button) => {
   });
 });
 
-const skillsTimeline = document.getElementById('skillsTimeline');
-const skillsTimelineProgress = document.getElementById('skillsTimelineProgress');
-const skillsTimelineItems = document.querySelectorAll('.skills-timeline-item');
+const skillsTimelineSection = document.querySelector('.skills-timeline-section');
+const skillsTimelineFill = document.getElementById('skillsTimelineFill');
 
-const updateSkillsTimelineProgress = () => {
-  if (!skillsTimeline || !skillsTimelineProgress) return;
+const updateSkillsTimelineFill = () => {
+  if (!skillsTimelineSection || !skillsTimelineFill) return;
 
-  const rect = skillsTimeline.getBoundingClientRect();
+  const rect = skillsTimelineSection.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
-  const visibleDistance = Math.min(Math.max(viewportHeight - rect.top, 0), rect.height);
-  const progress = rect.height > 0 ? visibleDistance / rect.height : 0;
 
-  skillsTimelineProgress.style.height = `${Math.max(0, Math.min(progress, 1)) * 100}%`;
+  const start = viewportHeight * 0.18;
+  const end = viewportHeight * 0.82;
+
+  const rawProgress = (end - rect.top) / (rect.height + (end - start));
+  const progress = Math.max(0, Math.min(1, rawProgress));
+
+  skillsTimelineFill.style.height = `${progress * 100}%`;
 };
 
-const skillsTimelineObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
-    });
-  },
-  {
-    threshold: 0.2,
-    rootMargin: '0px 0px -10% 0px'
-  }
-);
-
-skillsTimelineItems.forEach((item) => skillsTimelineObserver.observe(item));
-
-window.addEventListener('scroll', updateSkillsTimelineProgress, { passive: true });
-window.addEventListener('resize', updateSkillsTimelineProgress);
-window.addEventListener('load', updateSkillsTimelineProgress);
-updateSkillsTimelineProgress();
+window.addEventListener('scroll', updateSkillsTimelineFill, { passive: true });
+window.addEventListener('resize', updateSkillsTimelineFill);
+window.addEventListener('load', updateSkillsTimelineFill);
+updateSkillsTimelineFill();
