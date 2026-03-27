@@ -413,3 +413,39 @@ modalButtons.forEach((button) => {
     });
   });
 });
+
+const skillsTimeline = document.getElementById('skillsTimeline');
+const skillsTimelineProgress = document.getElementById('skillsTimelineProgress');
+const skillsTimelineItems = document.querySelectorAll('.skills-timeline-item');
+
+const updateSkillsTimelineProgress = () => {
+  if (!skillsTimeline || !skillsTimelineProgress) return;
+
+  const rect = skillsTimeline.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+  const visibleDistance = Math.min(Math.max(viewportHeight - rect.top, 0), rect.height);
+  const progress = rect.height > 0 ? visibleDistance / rect.height : 0;
+
+  skillsTimelineProgress.style.height = `${Math.max(0, Math.min(progress, 1)) * 100}%`;
+};
+
+const skillsTimelineObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  },
+  {
+    threshold: 0.2,
+    rootMargin: '0px 0px -10% 0px'
+  }
+);
+
+skillsTimelineItems.forEach((item) => skillsTimelineObserver.observe(item));
+
+window.addEventListener('scroll', updateSkillsTimelineProgress, { passive: true });
+window.addEventListener('resize', updateSkillsTimelineProgress);
+window.addEventListener('load', updateSkillsTimelineProgress);
+updateSkillsTimelineProgress();

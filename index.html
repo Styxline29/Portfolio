@@ -324,41 +324,285 @@
           <p>Un aperçu de mes compétences techniques et humaines.</p>
         </div>
 
-        <div class="filters" role="tablist" aria-label="Filtrer les compétences">
-          <button class="skill-chip active" data-skill-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="skill-chip" data-skill-filter="hard" role="tab" aria-selected="false">Hard skills</button>
-          <button class="skill-chip" data-skill-filter="soft" role="tab" aria-selected="false">Soft skills</button>
+        <div class="skills-intro scroll-animate" data-animate="fade-up">
+          <span class="skills-badge">Stripe inspired</span>
+          <p>
+            Une timeline premium qui déroule progressivement mes hard skills puis mes soft skills,
+            avec une alternance visuelle gauche / droite pour renforcer la lecture.
+          </p>
         </div>
 
-        <div class="row g-4" id="skillsGrid">
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-orange-500"><i class="fa-brands fa-html5"></i></div><h3>HTML5</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-blue-500"><i class="fa-brands fa-css3-alt"></i></div><h3>CSS3</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind skill-card-active scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-yellow-400"><i class="fa-brands fa-js"></i></div><h3>JavaScript</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-fuchsia-400"><i class="fa-brands fa-php"></i></div><h3>PHP</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-sky-300"><i class="fa-solid fa-database"></i></div><h3>MySQL</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-green-400"><i class="fa-brands fa-python"></i></div><h3>Python</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-red-400"><i class="fa-brands fa-java"></i></div><h3>Java</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-violet-300"><i class="fa-solid fa-code"></i></div><h3>C#</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-blue-300"><i class="fa-solid fa-terminal"></i></div><h3>C / C++</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-purple-300"><i class="fa-solid fa-gamepad"></i></div><h3>Lua</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-slate-300"><i class="fa-solid fa-chevron-right"></i></div><h3>Bash</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-cyan-300"><i class="fa-brands fa-wordpress"></i></div><h3>WordPress</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-indigo-300"><i class="fa-solid fa-layer-group"></i></div><h3>RageUI</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-emerald-300"><i class="fa-solid fa-bars-progress"></i></div><h3>PMenu</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-amber-300"><i class="fa-solid fa-cube"></i></div><h3>JavaScript (Minecraft)</h3></article></div>
+        <div class="skills-timeline" id="skillsTimeline">
+          <div class="skills-timeline-line"></div>
+          <div class="skills-timeline-progress" id="skillsTimelineProgress"></div>
 
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-excel"><i class="fa-solid fa-file-excel"></i></div><h3>Excel</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-word"><i class="fa-solid fa-file-word"></i></div><h3>Word</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-powerpoint"><i class="fa-solid fa-file-powerpoint"></i></div><h3>PowerPoint</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-outlook"><i class="fa-solid fa-envelope"></i></div><h3>Outlook</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="hard"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind office-teams"><i class="fa-solid fa-users"></i></div><h3>Teams</h3></article></div>
+          <article class="skills-timeline-item left" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-orange-500"><i class="fa-brands fa-html5"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>HTML5</h3>
+              </div>
+            </div>
+          </article>
 
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-green-400"><i class="fa-solid fa-comments"></i></div><h3>Communication</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-blue-300"><i class="fa-solid fa-people-group"></i></div><h3>Travail d’équipe</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-amber-300"><i class="fa-solid fa-lightbulb"></i></div><h3>Créativité</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-red-400"><i class="fa-solid fa-bullseye"></i></div><h3>Rigueur</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-cyan-300"><i class="fa-solid fa-book-open-reader"></i></div><h3>Apprentissage rapide</h3></article></div>
-          <div class="col-6 col-md-4 col-xl-3 skill-item" data-skill-tags="soft"><article class="skill-card-tailwind scroll-animate h-100" data-animate="zoom-in"><span class="skill-overflow-tailwind"></span><div class="skill-icon-tailwind text-violet-300"><i class="fa-solid fa-clock"></i></div><h3>Organisation</h3></article></div>
+          <article class="skills-timeline-item right" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-yellow-400"><i class="fa-brands fa-js"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>JavaScript</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-blue-500"><i class="fa-brands fa-css3-alt"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>CSS3</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-fuchsia-400"><i class="fa-brands fa-php"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>PHP</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-sky-300"><i class="fa-solid fa-database"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>MySQL</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-green-400"><i class="fa-brands fa-python"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>Python</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-red-400"><i class="fa-brands fa-java"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>Java</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-violet-300"><i class="fa-solid fa-code"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>C#</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-blue-300"><i class="fa-solid fa-terminal"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>C / C++</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-purple-300"><i class="fa-solid fa-gamepad"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>Lua</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-slate-300"><i class="fa-solid fa-chevron-right"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>Bash</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-cyan-300"><i class="fa-brands fa-wordpress"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>WordPress</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-indigo-300"><i class="fa-solid fa-layer-group"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>RageUI</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-emerald-300"><i class="fa-solid fa-bars-progress"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>PMenu</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-amber-300"><i class="fa-solid fa-cube"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>JavaScript (Minecraft)</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon office-pack"><i class="fa-solid fa-file-lines"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>Pack Office</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon office-outlook"><i class="fa-solid fa-envelope"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>Outlook</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="hard">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon office-teams"><i class="fa-solid fa-users"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Hard skill</span>
+                <h3>Teams</h3>
+              </div>
+            </div>
+          </article>
+
+          <div class="skills-timeline-divider" aria-hidden="true">
+            <span>Soft skills</span>
+          </div>
+
+          <article class="skills-timeline-item left" data-skill-group="soft">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-green-400"><i class="fa-solid fa-comments"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Soft skill</span>
+                <h3>Communication</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="soft">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-blue-300"><i class="fa-solid fa-people-group"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Soft skill</span>
+                <h3>Travail d’équipe</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="soft">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-amber-300"><i class="fa-solid fa-lightbulb"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Soft skill</span>
+                <h3>Créativité</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="soft">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-red-400"><i class="fa-solid fa-bullseye"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Soft skill</span>
+                <h3>Rigueur</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item left" data-skill-group="soft">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-cyan-300"><i class="fa-solid fa-book-open-reader"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Soft skill</span>
+                <h3>Apprentissage rapide</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="skills-timeline-item right" data-skill-group="soft">
+            <span class="skills-timeline-dot"></span>
+            <div class="skills-timeline-card">
+              <div class="skills-timeline-icon text-violet-300"><i class="fa-solid fa-clock"></i></div>
+              <div class="skills-timeline-text">
+                <span class="skills-timeline-label">Soft skill</span>
+                <h3>Organisation</h3>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
