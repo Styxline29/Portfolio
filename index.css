@@ -681,17 +681,28 @@ textarea {
 }
 
 .project h3 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-  line-height: 1.24;
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+:root:not(.dark) .project h3 {
+  color: #18212f;
 }
 
 .project p {
   margin: 0 0 14px;
   min-height: 84px;
-  color: var(--muted);
-  font-size: 0.98rem;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+:root:not(.dark) .project p {
+  color: #4b5563;
 }
 
 .card-actions {
