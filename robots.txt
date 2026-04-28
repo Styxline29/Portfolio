@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://styxline29.github.io/Portfolio/sitemap.xml

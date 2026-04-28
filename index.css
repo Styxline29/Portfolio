@@ -8197,3 +8197,115 @@ html {
     height: 130px !important;
   }
 }
+
+
+/* =========================================================
+   OPTIMISATION SENIOR - SEO / PERFORMANCE / ACCESSIBILITÉ
+   Rendu visuel conservé.
+   ========================================================= */
+
+/* Accessibilité clavier sans impact visuel hors focus */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 20000;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #fff;
+  background: var(--accent);
+  text-decoration: none;
+  font-weight: 900;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(255, 75, 62, 0.72);
+  outline-offset: 4px;
+}
+
+/* Sections lourdes optimisées sans changer le rendu */
+#projets,
+#competences,
+#experience,
+#contact,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 820px;
+}
+
+/* Les cartes et images isolent mieux les calculs de rendu */
+.card,
+.project,
+.timeline-card,
+.experience-card,
+.experience-highlight-card,
+.contact-form,
+.hero-panel {
+  contain: layout paint style;
+}
+
+.project-image,
+.hero-photo,
+img {
+  backface-visibility: hidden;
+}
+
+/* Animation plus performante */
+.scroll-animate {
+  will-change: transform, opacity;
+}
+
+.scroll-animate.is-visible {
+  will-change: auto;
+}
+
+/* Réduction intelligente des animations si l’utilisateur le demande */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Optimisations mobile/tablette : même rendu, moins de coût GPU */
+@media (max-width: 1024px) {
+  .hero-spotlight {
+    display: none !important;
+  }
+
+  .project:hover .project-image {
+    filter: none !important;
+  }
+
+  .hero-panel,
+  .card,
+  .project,
+  .contact-form,
+  .timeline-card,
+  .experience-card {
+    transform: translateZ(0);
+  }
+}
+
+/* Amélioration du rendu typographique */
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

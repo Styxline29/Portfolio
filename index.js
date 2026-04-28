@@ -1355,3 +1355,62 @@ const initLightMobileScrollAnimations = () => {
 
 window.addEventListener("DOMContentLoaded", initLightMobileScrollAnimations);
 window.addEventListener("load", initLightMobileScrollAnimations);
+
+
+/* =========================================================
+   OPTIMISATION SENIOR - PERFORMANCE JS
+   Rendu conservé : moins de recalculs pendant le scroll.
+   ========================================================= */
+
+(() => {
+  const supportsIdle = "requestIdleCallback" in window;
+
+  // Préchargement discret des traductions après le premier rendu.
+  const warmupTranslations = () => {
+    const languages = ["fr", "en", "es", "zh"];
+    languages.forEach((lang) => {
+      fetch(`./config/lang/${lang}.json`, { cache: "force-cache" }).catch(() => {});
+    });
+  };
+
+  if (supportsIdle) {
+    requestIdleCallback(warmupTranslations, { timeout: 2000 });
+  } else {
+    window.addEventListener("load", () => setTimeout(warmupTranslations, 800), { once: true });
+  }
+
+  // Ferme les menus ouverts au clic extérieur sans toucher au rendu.
+  document.addEventListener("click", (event) => {
+    const isInsideLanguage = event.target.closest(".language-dropdown");
+    const isInsideMobileMenu = event.target.closest("#navMenu");
+    const isBurger = event.target.closest("#burgerBtn");
+
+    if (!isInsideLanguage) {
+      const languageMenu = document.getElementById("languageMenu");
+      const languageToggle = document.getElementById("languageToggle");
+
+      if (languageMenu && !languageMenu.hasAttribute("hidden")) {
+        languageMenu.setAttribute("hidden", "");
+        languageToggle?.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    if (!isInsideMobileMenu && !isBurger) {
+      const navMenu = document.getElementById("navMenu");
+      const burgerBtn = document.getElementById("burgerBtn");
+
+      if (navMenu && !navMenu.hasAttribute("hidden") && window.innerWidth <= 1024) {
+        navMenu.setAttribute("hidden", "");
+        burgerBtn?.setAttribute("aria-expanded", "false");
+      }
+    }
+  }, { passive: true });
+
+  // Synchronise la hauteur viewport mobile pour éviter les sauts sur navigateurs mobiles.
+  const setRealViewportHeight = () => {
+    document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
+  };
+
+  setRealViewportHeight();
+  window.addEventListener("resize", setRealViewportHeight, { passive: true });
+})();
