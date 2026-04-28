@@ -1414,3 +1414,28 @@ window.addEventListener("load", initLightMobileScrollAnimations);
   setRealViewportHeight();
   window.addEventListener("resize", setRealViewportHeight, { passive: true });
 })();
+
+/* =========================================================
+   OPTIMISATION JS FINALE
+   Préchargement discret + meilleure stabilité mobile.
+   ========================================================= */
+(() => {
+  const setViewportUnit = () => {
+    document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
+  };
+
+  setViewportUnit();
+  window.addEventListener("resize", setViewportUnit, { passive: true });
+
+  const warmupTranslations = () => {
+    ["fr", "en", "es", "zh"].forEach((lang) => {
+      fetch(`./config/lang/${lang}.json`, { cache: "force-cache" }).catch(() => {});
+    });
+  };
+
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(warmupTranslations, { timeout: 2000 });
+  } else {
+    window.addEventListener("load", () => setTimeout(warmupTranslations, 900), { once: true });
+  }
+})();

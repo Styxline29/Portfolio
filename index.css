@@ -6583,7 +6583,7 @@ body::before {
   background-image:
     linear-gradient(90deg, var(--page-bg-overlay-2), var(--page-bg-overlay-1), var(--page-bg-overlay-2)),
     linear-gradient(180deg, transparent, var(--page-bg-overlay-2)),
-    url("./assets/background-landscape.jpeg");
+    url("./assets/background-landscape.webp");
 
   background-size: cover;
   background-position: center;
@@ -7272,7 +7272,7 @@ html {
   background-image:
     linear-gradient(90deg, rgba(255,255,255,0.34), rgba(255,255,255,0.18), rgba(255,255,255,0.38)),
     linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.38)),
-    url("./assets/background-landscape.jpeg") !important;
+    url("./assets/background-landscape.webp") !important;
   opacity: 1 !important;
   filter: brightness(0.95) contrast(1.06) saturate(0.95) !important;
 }
@@ -8309,3 +8309,67 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+/* =========================================================
+   OPTIMISATION WEBP / PERFORMANCE FINALE
+   Rendu conservé.
+   ========================================================= */
+#projets,
+#competences,
+#experience,
+#contact,
+.footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 850px;
+}
+
+.project,
+.card,
+.timeline-card,
+.experience-card,
+.experience-highlight-card,
+.contact-form,
+.hero-panel {
+  contain: layout paint style;
+}
+
+.project-image,
+.hero-photo {
+  backface-visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .hero-spotlight {
+    display: none !important;
+  }
+
+  .project:hover .project-image {
+    filter: none !important;
+  }
+
+  .hero-panel,
+  .card,
+  .project,
+  .timeline-card,
+  .experience-card,
+  .contact-form {
+    transform: translateZ(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
