@@ -1,0 +1,1166 @@
+<!doctype html>
+
+<html class="dark" lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <title>Portfolio – Lucas VIGILE</title>
+    <meta
+      content="Portfolio d'un étudiant concepteur développeur web et mobile : projets, compétences, expériences, contact et CV téléchargeable."
+      name="description"
+    />
+    <meta content="Portfolio – Lucas VIGILE" property="og:title" />
+    <meta
+      content="Projets, compétences, expériences et contact."
+      property="og:description"
+    />
+    <meta content="website" property="og:type" />
+    <meta content="./assets/avatar.png" property="og:image" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./assets/favicon.png" rel="icon" type="image/png" />
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="pageTop" aria-hidden="true"></div>
+    <div aria-hidden="true" id="preloader">
+      <div aria-label="Chargement" class="spinner"></div>
+      <p>Chargement...</p>
+    </div>
+    <header class="site-header" id="top">
+      <nav aria-label="Navigation principale" class="main-navbar" role="navigation">
+        <div class="navbar-shell">
+          <a href="#pageTop" class="logo" data-scroll-top="true">
+            <span class="logo-mark">S</span>
+            <span class="logo-text">Styx<span class="accent">aether</span></span>
+          </a>
+
+          <ul class="nav-links desktop-nav">
+            <li>
+              <a href="#projets">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Projets</span>
+              </a>
+            </li>
+            <li>
+              <a href="#competences">
+                <i class="fa-solid fa-code"></i>
+                <span>Compétences</span>
+              </a>
+            </li>
+            <li>
+              <a href="#experience">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Expériences</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Me contacter</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="actions">
+            <button aria-label="Basculer le thème" class="icon-btn" id="themeToggle" type="button">
+              <i class="fa-solid fa-sun"></i>
+            </button>
+
+            <div class="language-dropdown">
+              <button
+                aria-controls="languageMenu"
+                aria-expanded="false"
+                aria-label="Choisir la langue"
+                class="language-toggle"
+                id="languageToggle"
+                type="button"
+              >
+                <i class="fa-solid fa-globe"></i>
+                <span id="languageCurrentLabel">Français</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+
+              <div class="language-menu" hidden id="languageMenu">
+                <button class="language-option" data-lang="en" role="menuitem" type="button">English</button>
+                <button class="language-option" data-lang="fr" role="menuitem" type="button">Français</button>
+                <button class="language-option" data-lang="es" role="menuitem" type="button">Español</button>
+                <button class="language-option" data-lang="zh" role="menuitem" type="button">中文</button>
+              </div>
+            </div>
+
+            <a class="cv-btn" download href="./assets/CV_Lucas_VIGILE.pdf">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>Télécharger CV</span>
+            </a>
+
+            <button
+              aria-controls="navMenu"
+              aria-expanded="false"
+              aria-label="Ouvrir le menu"
+              class="burger"
+              id="burgerBtn"
+              type="button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="nav-menu" hidden id="navMenu">
+        <a href="#projets"><i class="fa-solid fa-folder-open"></i> Projets</a>
+        <a href="#competences"><i class="fa-solid fa-code"></i> Compétences</a>
+        <a href="#experience"><i class="fa-solid fa-briefcase"></i> Expériences</a>
+        <a href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </div>
+    </header>
+    <main>
+      <!-- HERO -->
+      <section aria-label="Présentation" class="hero">
+        <div class="hero-spotlight" id="heroSpotlight"></div>
+        <div class="container">
+          <div
+            class="row align-items-center gy-5 hero-bootstrap-row"
+            id="heroInteractive"
+          >
+            <div class="col-12 col-lg-7">
+              <div class="hero-text scroll-animate" data-animate="fade-up">
+                <span class="hero-kicker"
+                  >Portfolio • Cybersécurité • Développement web</span
+                >
+                <h1>
+                  Lucas<br />
+                  <span class="accent">Étudiant, Concepteur développeur</span
+                  ><br />
+                  Web &amp; Mobile
+                </h1>
+                <p class="hero-description">
+                  Étudiant passionné par la cybersécurité et le développement
+                  web, je conçois des interfaces modernes, fluides et
+                  professionnelles avec une attention particulière portée à
+                  l’expérience utilisateur, à la performance et à la qualité
+                  visuelle.
+                </p>
+                <div class="hero-badges">
+                  <span class="interactive-chip"
+                    ><i class="fa-solid fa-shield-halved"></i>
+                    Cybersécurité</span
+                  >
+                  <span class="interactive-chip"
+                    ><i class="fa-solid fa-code"></i> Front / Back</span
+                  >
+                  <span class="interactive-chip"
+                    ><i class="fa-solid fa-mobile-screen-button"></i> Web &amp;
+                    Mobile</span
+                  >
+                </div>
+                <div class="d-flex flex-wrap gap-3 hero-cta">
+                  <a class="btn-primary magnetic-btn" href="#projets">
+                    <i class="fa-solid fa-rocket"></i>
+                    Voir mes projets
+                  </a>
+                  <a class="btn-secondary magnetic-btn" href="#contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    Me contacter
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-5">
+              <div class="hero-side scroll-animate" data-animate="fade-left">
+                <div class="hero-panel mx-auto">
+                  <div class="hero-avatar-wrap">
+                    <img
+                      alt="Photo de Lucas Vigile"
+                      class="hero-photo"
+                      decoding="async"
+                      height="320"
+                      loading="eager"
+                      src="./assets/avatar.png"
+                      width="320"
+                    />
+                  </div>
+                  <button class="floating-card floating-card-top" type="button">
+                    <i class="fa-solid fa-code"></i>
+                    <span>UI moderne</span>
+                  </button>
+                  <button
+                    class="floating-card floating-card-bottom"
+                    type="button"
+                  >
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Performance</span>
+                  </button>
+                  <button
+                    class="floating-card floating-card-right"
+                    type="button"
+                  >
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Expérience fluide</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PROJETS -->
+      <section
+        aria-labelledby="titre-projets"
+        class="section scroll-animate"
+        data-animate="fade-up"
+        id="projets"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2 id="titre-projets">
+              <i class="fa-solid fa-folder-open"></i> Projets
+            </h2>
+            <p>Une sélection de réalisations : web, jeu et projets d'étude.</p>
+          </div>
+          <div aria-label="Filtrer les projets" class="filters" role="tablist">
+            <button
+              aria-selected="true"
+              class="chip active"
+              data-filter="all"
+              role="tab"
+            >
+              Tous
+            </button>
+            <button
+              aria-selected="false"
+              class="chip"
+              data-filter="web"
+              role="tab"
+            >
+              Web
+            </button>
+            <button
+              aria-selected="false"
+              class="chip"
+              data-filter="cyber"
+              role="tab"
+            >
+              Jeu
+            </button>
+            <button
+              aria-selected="false"
+              class="chip"
+              data-filter="school"
+              role="tab"
+            >
+              Études
+            </button>
+          </div>
+          <div class="row g-4" id="projectsGrid">
+            <div class="col-12 col-md-6 col-xl-4 project-item" data-tags="web">
+              <article
+                class="card project tilt-card scroll-animate h-100"
+                data-animate="fade-up"
+                tabindex="0"
+              >
+                <div class="project-image-wrap">
+                  <img
+                    alt="Aperçu site vitrine immobilier"
+                    class="project-image"
+                    loading="lazy"
+                    src="./assets/obi29.png"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3>Site vitrine KW Ocean</h3>
+                  <p>
+                    Site immobilier responsive avec animations, navigation
+                    fluide, valorisation des biens et expérience utilisateur
+                    soignée.
+                  </p>
+                  <div class="card-actions">
+                    <a
+                      class="project-code"
+                      href="https://github.com/Styxline29/"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                      Code
+                    </a>
+                    <button
+                      class="project-link demo-unavailable"
+                      data-github-url="https://github.com/Styxline29/"
+                      type="button"
+                    >
+                      Voir la démo
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div
+              class="col-12 col-md-6 col-xl-4 project-item"
+              data-tags="cyber"
+            >
+              <article
+                class="card project tilt-card scroll-animate h-100"
+                data-animate="fade-up"
+                tabindex="0"
+              >
+                <div class="project-image-wrap">
+                  <img
+                    alt="Aperçu Script FiveM"
+                    class="project-image"
+                    loading="lazy"
+                    src="./assets/fivem.jpg"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3>Script FiveM</h3>
+                  <p>
+                    Développement d’un script RageUI destiné à enrichir un
+                    serveur GTA RP avec une interface claire et des
+                    fonctionnalités immersives.
+                  </p>
+                  <div class="card-actions">
+                    <a
+                      class="project-code"
+                      href="https://github.com/Styxline29/"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                      Code
+                    </a>
+                    <button
+                      class="project-link demo-unavailable"
+                      data-github-url="https://github.com/Styxline29/"
+                      type="button"
+                    >
+                      Voir la démo
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div
+              class="col-12 col-md-6 col-xl-4 project-item"
+              data-tags="school"
+            >
+              <article
+                class="card project tilt-card scroll-animate h-100"
+                data-animate="fade-up"
+                tabindex="0"
+              >
+                <div class="project-image-wrap">
+                  <img
+                    alt="Aperçu dashboard d'administration"
+                    class="project-image"
+                    loading="lazy"
+                    src="./assets/pannel admin.png"
+                  />
+                </div>
+                <div class="card-body">
+                  <h3>Dashboard d'administration</h3>
+                  <p>
+                    Interface de gestion en PHP/MySQL avec modification de
+                    contenus, authentification et organisation claire pour
+                    l’administration d’une boîte mail.
+                  </p>
+                  <div class="card-actions">
+                    <a
+                      class="project-code"
+                      href="https://github.com/Styxline29/"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                      Code
+                    </a>
+                    <button
+                      class="project-link demo-unavailable"
+                      data-github-url="https://github.com/Styxline29/"
+                      type="button"
+                    >
+                      Voir la démo
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- COMPÉTENCES -->
+      <section
+        aria-labelledby="titre-competences"
+        class="section"
+        id="competences"
+      >
+        <div class="container">
+          <div
+            class="section-header skills-centered-header scroll-animate"
+            data-animate="fade-up"
+          >
+            <h2 id="titre-competences">
+              <i class="fa-solid fa-code"></i> Compétences
+            </h2>
+            <p>Un aperçu de mes compétences techniques et humaines.</p>
+          </div>
+          <div class="skills-timeline-section">
+            <div class="skills-timeline-track">
+              <span
+                class="skills-timeline-track-fill"
+                id="skillsTimelineFill"
+              ></span>
+            </div>
+            <div
+              class="skills-group-title scroll-animate"
+              data-animate="zoom-in"
+            >
+              <span><i class="fa-solid fa-laptop-code"></i> Hard Skills</span>
+            </div>
+            <div class="skills-timeline-list">
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-orange-500">
+                    <i class="fa-brands fa-html5"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Front-end</span>
+                    <h3>HTML5</h3>
+                    <p>
+                      Structure sémantique et intégration propre pour des
+                      interfaces web modernes.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-yellow-400">
+                    <i class="fa-brands fa-js"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Front-end</span>
+                    <h3>JavaScript</h3>
+                    <p>
+                      Interactions dynamiques, animations et logique
+                      utilisateur.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-blue-500">
+                    <i class="fa-brands fa-css3-alt"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">UI / Design</span>
+                    <h3>CSS3</h3>
+                    <p>
+                      Responsive design, animations premium et mise en page
+                      soignée.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-fuchsia-400">
+                    <i class="fa-brands fa-php"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Back-end</span>
+                    <h3>PHP</h3>
+                    <p>
+                      Développement serveur et mise en place de fonctionnalités
+                      dynamiques.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-sky-300">
+                    <i class="fa-solid fa-database"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Base de données</span>
+                    <h3>MySQL</h3>
+                    <p>
+                      Conception, organisation et exploitation de bases de
+                      données.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-green-400">
+                    <i class="fa-brands fa-python"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Programmation</span>
+                    <h3>Python</h3>
+                    <p>
+                      Scripts, automatisation et résolution de problèmes
+                      techniques.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-red-400">
+                    <i class="fa-brands fa-java"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Programmation</span>
+                    <h3>Java</h3>
+                    <p>
+                      Programmation orientée objet, algorithmie et projets
+                      académiques.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-violet-300">
+                    <i class="fa-solid fa-code"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Programmation</span>
+                    <h3>C#</h3>
+                    <p>
+                      Développement structuré et approche rigoureuse du code.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-blue-300">
+                    <i class="fa-solid fa-terminal"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Système</span>
+                    <h3>C / C++</h3>
+                    <p>Fondamentaux bas niveau et compréhension machine.</p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-purple-300">
+                    <i class="fa-solid fa-gamepad"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Scripting</span>
+                    <h3>Lua</h3>
+                    <p>
+                      Scripts personnalisés pour environnements interactifs.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-slate-300">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Terminal</span>
+                    <h3>Bash</h3>
+                    <p>Commandes système et automatisation simple de tâches.</p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-cyan-300">
+                    <i class="fa-brands fa-wordpress"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">CMS</span>
+                    <h3>WordPress</h3>
+                    <p>
+                      Création et personnalisation de sites avec gestion
+                      simplifiée des contenus.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-indigo-300">
+                    <i class="fa-solid fa-layer-group"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Interface</span>
+                    <h3>RageUI</h3>
+                    <p>
+                      Interfaces immersives et ergonomiques pour environnements
+                      spécifiques.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-emerald-300">
+                    <i class="fa-solid fa-bars-progress"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Menu UI</span>
+                    <h3>PMenu</h3>
+                    <p>
+                      Conception de menus fonctionnels adaptés à des besoins
+                      ciblés.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-amber-300">
+                    <i class="fa-solid fa-cube"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Scripting</span>
+                    <h3>JavaScript (Minecraft)</h3>
+                    <p>
+                      Logique événementielle et création de fonctionnalités
+                      ludiques.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon office-pack">
+                    <i class="fa-solid fa-file-lines"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Bureautique</span>
+                    <h3>Pack Office</h3>
+                    <p>
+                      Rédaction, présentation et organisation avec les outils
+                      bureautiques.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div
+              class="skills-group-title soft scroll-animate"
+              data-animate="zoom-in"
+            >
+              <span><i class="fa-solid fa-brain"></i> Soft Skills</span>
+            </div>
+            <div class="skills-timeline-list">
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-green-400">
+                    <i class="fa-solid fa-comments"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Relationnel</span>
+                    <h3>Communication</h3>
+                    <p>
+                      Capacité à expliquer clairement et échanger efficacement.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-blue-300">
+                    <i class="fa-solid fa-people-group"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Collaboration</span>
+                    <h3>Travail d’équipe</h3>
+                    <p>
+                      Coopération efficace et adaptation dans les projets
+                      collectifs.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-amber-300">
+                    <i class="fa-solid fa-lightbulb"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Réflexion</span>
+                    <h3>Créativité</h3>
+                    <p>
+                      Recherche de solutions originales et identité visuelle
+                      soignée.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-red-400">
+                    <i class="fa-solid fa-bullseye"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Méthode</span>
+                    <h3>Rigueur</h3>
+                    <p>
+                      Attention au détail, organisation et qualité du rendu
+                      final.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-left scroll-animate"
+                data-animate="fade-right"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-cyan-300">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Progression</span>
+                    <h3>Apprentissage rapide</h3>
+                    <p>
+                      Montée en compétence rapide sur de nouveaux outils et
+                      méthodes.
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="timeline-entry timeline-right scroll-animate"
+                data-animate="fade-left"
+              >
+                <span class="timeline-node"></span>
+                <div class="timeline-card">
+                  <div class="timeline-card-icon text-violet-300">
+                    <i class="fa-solid fa-clock"></i>
+                  </div>
+                  <div class="timeline-card-text">
+                    <span class="timeline-card-tag">Gestion</span>
+                    <h3>Organisation</h3>
+                    <p>
+                      Capacité à structurer, prioriser et mener les tâches
+                      efficacement.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- EXPÉRIENCES -->
+      <section
+        aria-labelledby="titre-experience"
+        class="section experience-section"
+        id="experience"
+      >
+        <div class="container">
+          <div
+            class="section-header experience-header scroll-animate"
+            data-animate="fade-up"
+          >
+            <span class="experience-kicker">Parcours &amp; progression</span>
+            <h2 id="titre-experience">
+              <i class="fa-solid fa-briefcase"></i>
+              Expériences
+            </h2>
+            <p class="experience-subtitle">
+              Une vision rapide de mon expérience terrain, de mes projets
+              personnels et de la valeur que je peux apporter sur des missions
+              web.
+            </p>
+            <div class="experience-header-line"></div>
+          </div>
+          <div class="experience-grid">
+            <article
+              class="experience-card experience-card-featured scroll-animate"
+              data-animate="fade-right"
+            >
+              <div class="experience-card-glow"></div>
+              <div class="experience-card-top">
+                <span class="experience-badge">2025</span>
+                <span class="experience-type">Professionnel</span>
+              </div>
+              <h3>Stagiaire – Développement Web</h3>
+              <p>
+                Réalisation de sites web pour plusieurs structures, intégration
+                HTML/CSS/JS, amélioration de l’interface utilisateur, responsive
+                design et optimisation des performances sur différents projets
+                professionnels.
+              </p>
+              <div class="experience-tags">
+                <span>HTML / CSS / JS</span>
+                <span>Responsive</span>
+                <span>UI / UX</span>
+              </div>
+            </article>
+            <article
+              class="experience-card scroll-animate"
+              data-animate="fade-left"
+            >
+              <div class="experience-card-glow"></div>
+              <div class="experience-card-top">
+                <span class="experience-badge">Depuis plusieurs années</span>
+                <span class="experience-type">Personnel</span>
+              </div>
+              <h3>Projets personnels</h3>
+              <p>
+                Développement de projets autour du web, du scripting, de
+                l’interface utilisateur et d’environnements comme Minecraft,
+                FiveM et Garry’s Mod, avec une forte curiosité technique et un
+                apprentissage continu.
+              </p>
+              <div class="experience-tags">
+                <span>Web</span>
+                <span>Scripting</span>
+                <span>Apprentissage continu</span>
+              </div>
+            </article>
+          </div>
+          <div class="experience-bottom-grid">
+            <article
+              class="experience-highlight-card scroll-animate"
+              data-animate="fade-right"
+            >
+              <div class="experience-highlight-icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div class="experience-highlight-text">
+                <h3>Ce que je construis</h3>
+                <p>
+                  Des interfaces web modernes, propres, responsives et pensées
+                  pour une expérience utilisateur fluide.
+                </p>
+              </div>
+            </article>
+            <article
+              class="experience-highlight-card scroll-animate"
+              data-animate="fade-left"
+            >
+              <div class="experience-highlight-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="experience-highlight-text">
+                <h3>Ce que j’apporte</h3>
+                <p>
+                  Rigueur technique, curiosité, progression continue et vraie
+                  implication dans la qualité du rendu final.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div
+            class="recruit-card experience-contact-card scroll-animate"
+            data-animate="fade-up"
+          >
+            <div class="experience-contact-head">
+              <div>
+                <span class="experience-contact-kicker">Collaboration</span>
+                <h3>Pourquoi me contacter ?</h3>
+              </div>
+              <span class="experience-contact-pill"
+                >Disponible pour opportunités</span
+              >
+            </div>
+            <p>
+              Je recherche des opportunités me permettant de progresser en
+              développement web et en cybersécurité, tout en apportant une vraie
+              rigueur technique et une envie d’apprendre.
+            </p>
+            <div class="recruit-points experience-points">
+              <span
+                ><i class="fa-solid fa-check"></i> Intégration front-end propre
+                et responsive</span
+              >
+              <span
+                ><i class="fa-solid fa-check"></i> Sensibilité UX/UI et
+                présentation visuelle</span
+              >
+              <span
+                ><i class="fa-solid fa-check"></i> Curiosité technique et
+                progression continue</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CONTACT -->
+      <section
+        aria-labelledby="titre-contact"
+        class="section scroll-animate"
+        data-animate="fade-up"
+        id="contact"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2 id="titre-contact">
+              <i class="fa-solid fa-paper-plane"></i> Contact
+            </h2>
+            <p>Un projet, une question ou une opportunité ? Écrivez-moi.</p>
+          </div>
+          <form
+            action="https://formspree.io/f/mojpdwyz"
+            class="contact-form"
+            id="contactForm"
+            method="POST"
+          >
+            <input id="contactSubject" name="subject" type="hidden" />
+            <input
+              id="formLanguage"
+              name="_language"
+              type="hidden"
+              value="fr"
+            />
+            <input
+              autocomplete="off"
+              class="form-honeypot"
+              name="_gotcha"
+              tabindex="-1"
+              type="text"
+            />
+            <div class="form-row">
+              <label for="name">Nom</label>
+              <input
+                id="name"
+                name="name"
+                placeholder="Votre nom"
+                required=""
+                type="text"
+              />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                placeholder="vous@exemple.com"
+                required=""
+                type="email"
+              />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Votre message..."
+                required=""
+                rows="6"
+              ></textarea>
+            </div>
+            <button
+              class="contact-submit magnetic-btn"
+              id="submitBtn"
+              type="submit"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Envoyer</span>
+            </button>
+            <!-- Ancien message inline supprimé au profit d'un toast premium -->
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> • Lucas VIGILE —
+          <a
+            href="https://github.com/Styxline29/"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            GitHub
+          </a>
+          • <a href="#pageTop" data-scroll-top="true" data-scroll-top="true">Haut de page</a>
+        </p>
+      </div>
+    </footer>
+    <button aria-label="Revenir en haut" class="back-to-top" id="backToTop">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- MODALE -->
+    <div aria-hidden="true" class="custom-modal" id="customModal">
+      <div class="custom-modal-overlay" data-close-modal=""></div>
+      <div
+        aria-labelledby="customModalTitle"
+        aria-modal="true"
+        class="custom-modal-dialog"
+        role="dialog"
+      >
+        <div class="custom-modal-glow"></div>
+        <div class="custom-modal-header">
+          <div class="custom-modal-badge">
+            <i class="fa-solid fa-gem"></i>
+            <span>Avertissement</span>
+          </div>
+          <button
+            aria-label="Fermer"
+            class="custom-modal-close"
+            id="customModalClose"
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="custom-modal-body">
+          <h3 id="customModalTitle">Information importante</h3>
+          <p id="customModalMessage"></p>
+        </div>
+        <div class="custom-modal-actions" id="customModalActions">
+          <button
+            class="modal-btn modal-btn-secondary"
+            id="customModalCancel"
+            type="button"
+          >
+            <span>Annuler</span>
+          </button>
+          <button
+            class="modal-btn modal-btn-primary"
+            id="customModalConfirm"
+            type="button"
+          >
+            <span>Continuer</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- TOAST NOTIFICATION CONTACT -->
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      class="toast-notification"
+      id="contactToast"
+    >
+      <div class="toast-notification__glow"></div>
+      <div class="toast-notification__icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <div class="toast-notification__content">
+        <span class="toast-notification__eyebrow">Message transmis</span>
+        <h4>Votre demande a bien été envoyée</h4>
+        <p>
+          Merci pour votre message. Je vous recontacterai dans les meilleurs
+          délais.
+        </p>
+      </div>
+      <button
+        aria-label="Fermer la notification"
+        class="toast-notification__close"
+        id="contactToastClose"
+        type="button"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="toast-notification__progress"></div>
+    </div>
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

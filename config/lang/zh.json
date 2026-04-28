@@ -1,0 +1,294 @@
+{
+  "documentLang": "zh-CN",
+  "languageLabel": "中文",
+  "meta": {
+    "title": "作品集 – Lucas VIGILE",
+    "description": "一名网页与移动开发学生的作品集：项目、技能、经验、联系方式和可下载简历。",
+    "ogTitle": "作品集 – Lucas VIGILE",
+    "ogDescription": "项目、技能、经验与联系方式。"
+  },
+  "aria": {
+    "mainNav": "主导航",
+    "burgerOpen": "打开菜单",
+    "burgerClose": "关闭菜单",
+    "themeToggle": "切换主题",
+    "languageToggle": "选择语言",
+    "backToTop": "返回顶部",
+    "toastClose": "关闭通知",
+    "modalClose": "关闭",
+    "heroSection": "介绍",
+    "projectsFilter": "筛选项目"
+  },
+  "nav": {
+    "projects": "项目",
+    "skills": "技能",
+    "experience": "经历",
+    "contact": "联系我",
+    "contactMobile": "联系",
+    "cv": "下载简历",
+    "language": "语言"
+  },
+  "hero": {
+    "kicker": "作品集 • 网络安全 • Web 开发",
+    "titleHtml": "Lucas<br><span class=\"accent\">学生，设计与开发工程师</span><br>Web 与移动端",
+    "description": "我热爱网络安全与 Web 开发，专注于打造现代、流畅且专业的界面，并特别重视用户体验、性能和视觉质量。",
+    "badges": [
+      "网络安全",
+      "前端 / 后端",
+      "Web 与移动端"
+    ],
+    "ctaProjects": "查看我的项目",
+    "ctaContact": "联系我",
+    "floating": [
+      "现代界面",
+      "性能",
+      "流畅体验"
+    ],
+    "photoAlt": "Lucas Vigile 的照片"
+  },
+  "projects": {
+    "title": "项目",
+    "description": "精选作品：网页、游戏与学习项目。",
+    "filters": [
+      "全部",
+      "网页",
+      "游戏",
+      "学习"
+    ],
+    "items": [
+      {
+        "title": "KW Ocean 展示网站",
+        "description": "响应式房地产网站，具有动画效果、流畅导航、房产展示和精致的用户体验。",
+        "imageAlt": "房地产展示网站预览",
+        "code": "代码",
+        "demo": "查看演示"
+      },
+      {
+        "title": "FiveM 脚本",
+        "description": "开发 RageUI 脚本，为 GTA RP 服务器提供清晰界面和沉浸式功能。",
+        "imageAlt": "FiveM 脚本预览",
+        "code": "代码",
+        "demo": "查看演示"
+      },
+      {
+        "title": "管理后台",
+        "description": "基于 PHP/MySQL 的管理界面，支持内容修改、身份验证以及清晰的网站管理结构。",
+        "imageAlt": "管理后台预览",
+        "code": "代码",
+        "demo": "查看演示"
+      }
+    ]
+  },
+  "skills": {
+    "title": "技能",
+    "description": "我的技术能力与软技能概览。",
+    "hardTitle": "硬技能",
+    "softTitle": "软技能",
+    "hard": [
+      [
+        "前端",
+        "HTML5",
+        "用于现代网页界面的语义化结构与规范集成。"
+      ],
+      [
+        "前端",
+        "JavaScript",
+        "动态交互、动画效果与用户逻辑。"
+      ],
+      [
+        "界面 / 设计",
+        "CSS3",
+        "响应式设计、高级动画与精致排版。"
+      ],
+      [
+        "后端",
+        "PHP",
+        "服务端开发与动态功能实现。"
+      ],
+      [
+        "数据库",
+        "MySQL",
+        "数据库的设计、组织与使用。"
+      ],
+      [
+        "编程",
+        "Python",
+        "脚本、自动化与技术问题解决。"
+      ],
+      [
+        "编程",
+        "Java",
+        "面向对象编程、算法与学术项目。"
+      ],
+      [
+        "编程",
+        "C#",
+        "结构化开发与严谨的代码方法。"
+      ],
+      [
+        "系统",
+        "C / C++",
+        "底层基础与机器理解。"
+      ],
+      [
+        "脚本",
+        "Lua",
+        "面向交互环境的自定义脚本。"
+      ],
+      [
+        "终端",
+        "Bash",
+        "系统命令与简单任务自动化。"
+      ],
+      [
+        "CMS",
+        "WordPress",
+        "网站创建与内容管理定制。"
+      ],
+      [
+        "界面",
+        "RageUI",
+        "适用于特定环境的沉浸式与易用界面。"
+      ],
+      [
+        "界面菜单",
+        "PMenu",
+        "针对具体需求设计功能型菜单。"
+      ],
+      [
+        "脚本",
+        "JavaScript（Minecraft）",
+        "事件逻辑与趣味功能开发。"
+      ],
+      [
+        "办公",
+        "Office 办公套件",
+        "使用办公工具进行写作、展示与组织。"
+      ]
+    ],
+    "soft": [
+      [
+        "沟通",
+        "沟通能力",
+        "能够清晰表达并高效交流。"
+      ],
+      [
+        "协作",
+        "团队合作",
+        "在团队项目中高效协作并灵活适应。"
+      ],
+      [
+        "思考",
+        "创造力",
+        "寻找原创解决方案并注重视觉风格。"
+      ],
+      [
+        "方法",
+        "严谨性",
+        "关注细节、组织性和最终质量。"
+      ],
+      [
+        "成长",
+        "快速学习",
+        "能够迅速掌握新工具与新方法。"
+      ],
+      [
+        "管理",
+        "组织能力",
+        "能够高效地组织、排序并推进任务。"
+      ]
+    ]
+  },
+  "experience": {
+    "kicker": "经历与成长",
+    "title": "经历",
+    "subtitle": "快速了解我的实践经验、个人项目，以及我在 Web 项目中能够带来的价值。",
+    "cards": [
+      {
+        "badge": "2025",
+        "type": "专业经历",
+        "title": "实习生 – Web 开发",
+        "description": "为多家机构制作网站，进行 HTML/CSS/JS 集成、用户界面优化、响应式设计以及多个专业项目的性能优化。",
+        "tags": [
+          "HTML / CSS / JS",
+          "响应式",
+          "UI / UX"
+        ]
+      },
+      {
+        "badge": "多年持续进行",
+        "type": "个人项目",
+        "title": "个人项目",
+        "description": "围绕网页、脚本、用户界面以及 Minecraft、FiveM 和 Garry’s Mod 等环境开展项目开发，保持强烈的技术好奇心和持续学习。",
+        "tags": [
+          "Web",
+          "脚本",
+          "持续学习"
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "我构建的内容",
+        "description": "现代、整洁、响应式的网页界面，专注流畅的用户体验。"
+      },
+      {
+        "title": "我能带来的价值",
+        "description": "技术严谨、持续成长、强烈好奇心，以及对最终质量的真实投入。"
+      }
+    ],
+    "contactCard": {
+      "kicker": "合作",
+      "title": "为什么联系我？",
+      "pill": "可接受新的机会",
+      "description": "我正在寻找能让我在 Web 开发和网络安全方面持续成长的机会，同时也能带来真正的技术严谨性和学习热情。",
+      "points": [
+        "整洁且响应式的前端集成",
+        "对 UX/UI 与视觉呈现的敏感度",
+        "技术好奇心与持续进步"
+      ]
+    }
+  },
+  "contact": {
+    "title": "联系",
+    "description": "有项目、问题或合作机会？欢迎给我留言。",
+    "labels": {
+      "name": "姓名",
+      "email": "邮箱",
+      "message": "留言"
+    },
+    "placeholders": {
+      "name": "你的姓名",
+      "email": "you@example.com",
+      "message": "你的留言..."
+    },
+    "submit": "发送",
+    "sending": "发送中...",
+    "sent": "已发送 ✔️",
+    "subjectPrefix": "联系请求 -",
+    "subjectFallback": "联系请求",
+    "formspreeLang": "zh",
+    "error": "发送时发生错误，请重试。"
+  },
+  "footer": {
+    "backToTop": "返回顶部"
+  },
+  "modal": {
+    "badge": "提示",
+    "defaultTitle": "重要信息",
+    "cancel": "取消",
+    "continue": "继续",
+    "deployTitle": "演示版本正在部署中",
+    "deployMessage": "演示版本当前正在部署中。如需更多信息，请联系网站管理员。",
+    "deployConfirm": "我知道了",
+    "githubTitle": "访问 GitHub 仓库",
+    "githubMessage": "是否要跳转到该项目的 GitHub 仓库以查看更多信息？",
+    "githubConfirm": "是，打开 GitHub",
+    "githubCancel": "否，留在此页"
+  },
+  "toast": {
+    "eyebrow": "消息已发送",
+    "title": "您的请求已成功发送",
+    "description": "感谢您的留言。我会尽快与您联系。"
+  }
+}

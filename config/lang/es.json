@@ -1,0 +1,294 @@
+{
+  "documentLang": "es",
+  "languageLabel": "Español",
+  "meta": {
+    "title": "Portafolio – Lucas VIGILE",
+    "description": "Portafolio de un estudiante desarrollador web y móvil: proyectos, habilidades, experiencia, contacto y CV descargable.",
+    "ogTitle": "Portafolio – Lucas VIGILE",
+    "ogDescription": "Proyectos, habilidades, experiencia y contacto."
+  },
+  "aria": {
+    "mainNav": "Navegación principal",
+    "burgerOpen": "Abrir menú",
+    "burgerClose": "Cerrar menú",
+    "themeToggle": "Cambiar tema",
+    "languageToggle": "Elegir idioma",
+    "backToTop": "Volver arriba",
+    "toastClose": "Cerrar notificación",
+    "modalClose": "Cerrar",
+    "heroSection": "Presentación",
+    "projectsFilter": "Filtrar proyectos"
+  },
+  "nav": {
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "contact": "Contactarme",
+    "contactMobile": "Contacto",
+    "cv": "Descargar CV",
+    "language": "Idioma"
+  },
+  "hero": {
+    "kicker": "Portafolio • Ciberseguridad • Desarrollo web",
+    "titleHtml": "Lucas<br><span class=\"accent\">Estudiante, diseñador y desarrollador</span><br>Web y móvil",
+    "description": "Estudiante apasionado por la ciberseguridad y el desarrollo web, diseño interfaces modernas, fluidas y profesionales con especial atención a la experiencia de usuario, el rendimiento y la calidad visual.",
+    "badges": [
+      "Ciberseguridad",
+      "Front / Back",
+      "Web y móvil"
+    ],
+    "ctaProjects": "Ver mis proyectos",
+    "ctaContact": "Contactarme",
+    "floating": [
+      "UI moderna",
+      "Rendimiento",
+      "Experiencia fluida"
+    ],
+    "photoAlt": "Foto de Lucas Vigile"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "description": "Una selección de trabajos: web, juego y proyectos académicos.",
+    "filters": [
+      "Todos",
+      "Web",
+      "Juego",
+      "Estudios"
+    ],
+    "items": [
+      {
+        "title": "Sitio escaparate KW Ocean",
+        "description": "Sitio inmobiliario responsive con animaciones, navegación fluida, valorización de propiedades y una experiencia de usuario cuidada.",
+        "imageAlt": "Vista previa del sitio inmobiliario",
+        "code": "Código",
+        "demo": "Ver la demo"
+      },
+      {
+        "title": "Script FiveM",
+        "description": "Desarrollo de un script RageUI destinado a enriquecer un servidor GTA RP con una interfaz clara y funciones inmersivas.",
+        "imageAlt": "Vista previa del script FiveM",
+        "code": "Código",
+        "demo": "Ver la demo"
+      },
+      {
+        "title": "Panel de administración",
+        "description": "Interfaz de gestión en PHP/MySQL con modificación de contenidos, autenticación y organización clara para la administración de un sitio web.",
+        "imageAlt": "Vista previa del panel de administración",
+        "code": "Código",
+        "demo": "Ver la demo"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades",
+    "description": "Una visión general de mis habilidades técnicas y humanas.",
+    "hardTitle": "Hard Skills",
+    "softTitle": "Soft Skills",
+    "hard": [
+      [
+        "Front-end",
+        "HTML5",
+        "Estructura semántica e integración limpia para interfaces web modernas."
+      ],
+      [
+        "Front-end",
+        "JavaScript",
+        "Interacciones dinámicas, animaciones y lógica del lado del usuario."
+      ],
+      [
+        "UI / Diseño",
+        "CSS3",
+        "Diseño responsive, animaciones premium y maquetación cuidada."
+      ],
+      [
+        "Back-end",
+        "PHP",
+        "Desarrollo del lado del servidor e integración de funciones dinámicas."
+      ],
+      [
+        "Base de datos",
+        "MySQL",
+        "Diseño, organización y explotación de bases de datos."
+      ],
+      [
+        "Programación",
+        "Python",
+        "Scripts, automatización y resolución de problemas técnicos."
+      ],
+      [
+        "Programación",
+        "Java",
+        "Programación orientada a objetos, algoritmia y proyectos académicos."
+      ],
+      [
+        "Programación",
+        "C#",
+        "Desarrollo estructurado y enfoque riguroso del código."
+      ],
+      [
+        "Sistema",
+        "C / C++",
+        "Fundamentos de bajo nivel y comprensión de la máquina."
+      ],
+      [
+        "Scripting",
+        "Lua",
+        "Scripts personalizados para entornos interactivos."
+      ],
+      [
+        "Terminal",
+        "Bash",
+        "Comandos del sistema y automatización simple de tareas."
+      ],
+      [
+        "CMS",
+        "WordPress",
+        "Creación y personalización de sitios con gestión simplificada de contenidos."
+      ],
+      [
+        "Interfaz",
+        "RageUI",
+        "Interfaces inmersivas y ergonómicas para entornos específicos."
+      ],
+      [
+        "Menú UI",
+        "PMenu",
+        "Diseño de menús funcionales adaptados a necesidades concretas."
+      ],
+      [
+        "Scripting",
+        "JavaScript (Minecraft)",
+        "Lógica orientada a eventos y creación de funciones lúdicas."
+      ],
+      [
+        "Ofimática",
+        "Pack Office",
+        "Redacción, presentación y organización con herramientas ofimáticas."
+      ]
+    ],
+    "soft": [
+      [
+        "Relacional",
+        "Comunicación",
+        "Capacidad para explicar con claridad y comunicarse eficazmente."
+      ],
+      [
+        "Colaboración",
+        "Trabajo en equipo",
+        "Cooperación eficaz y adaptación en proyectos colectivos."
+      ],
+      [
+        "Reflexión",
+        "Creatividad",
+        "Búsqueda de soluciones originales e identidad visual cuidada."
+      ],
+      [
+        "Método",
+        "Rigor",
+        "Atención al detalle, organización y calidad del resultado final."
+      ],
+      [
+        "Progreso",
+        "Aprendizaje rápido",
+        "Desarrollo rápido de competencias con nuevas herramientas y métodos."
+      ],
+      [
+        "Gestión",
+        "Organización",
+        "Capacidad para estructurar, priorizar y llevar tareas de forma eficaz."
+      ]
+    ]
+  },
+  "experience": {
+    "kicker": "Recorrido y progreso",
+    "title": "Experiencia",
+    "subtitle": "Una visión rápida de mi experiencia sobre el terreno, mis proyectos personales y el valor que puedo aportar en misiones web.",
+    "cards": [
+      {
+        "badge": "2025",
+        "type": "Profesional",
+        "title": "Practicante – Desarrollo web",
+        "description": "Creación de sitios web para varias estructuras, integración HTML/CSS/JS, mejora de la interfaz de usuario, diseño responsive y optimización del rendimiento en distintos proyectos profesionales.",
+        "tags": [
+          "HTML / CSS / JS",
+          "Responsive",
+          "UI / UX"
+        ]
+      },
+      {
+        "badge": "Desde hace varios años",
+        "type": "Personal",
+        "title": "Proyectos personales",
+        "description": "Desarrollo de proyectos en torno a la web, el scripting, la interfaz de usuario y entornos como Minecraft, FiveM y Garry’s Mod, con una fuerte curiosidad técnica y aprendizaje continuo.",
+        "tags": [
+          "Web",
+          "Scripting",
+          "Aprendizaje continuo"
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Lo que construyo",
+        "description": "Interfaces web modernas, limpias, responsive y pensadas para una experiencia de usuario fluida."
+      },
+      {
+        "title": "Lo que aporto",
+        "description": "Rigor técnico, curiosidad, progreso continuo y verdadera implicación en la calidad del resultado final."
+      }
+    ],
+    "contactCard": {
+      "kicker": "Colaboración",
+      "title": "¿Por qué contactarme?",
+      "pill": "Disponible para oportunidades",
+      "description": "Busco oportunidades que me permitan progresar en desarrollo web y ciberseguridad, aportando un verdadero rigor técnico y ganas de aprender.",
+      "points": [
+        "Integración front-end limpia y responsive",
+        "Sensibilidad UX/UI y presentación visual",
+        "Curiosidad técnica y progreso continuo"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "¿Un proyecto, una pregunta o una oportunidad? Escríbeme.",
+    "labels": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje"
+    },
+    "placeholders": {
+      "name": "Tu nombre",
+      "email": "tu@ejemplo.com",
+      "message": "Tu mensaje..."
+    },
+    "submit": "Enviar",
+    "sending": "Enviando...",
+    "sent": "Enviado ✔️",
+    "subjectPrefix": "Solicitud de contacto -",
+    "subjectFallback": "Solicitud de contacto",
+    "formspreeLang": "es",
+    "error": "Se produjo un error al enviar. Inténtalo de nuevo."
+  },
+  "footer": {
+    "backToTop": "Volver arriba"
+  },
+  "modal": {
+    "badge": "Aviso",
+    "defaultTitle": "Información importante",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "deployTitle": "Demo en proceso de despliegue",
+    "deployMessage": "La versión demo se está desplegando actualmente. Por favor, contacte con el administrador del sitio web para obtener más información.",
+    "deployConfirm": "Entendido",
+    "githubTitle": "Acceso al repositorio de GitHub",
+    "githubMessage": "¿Desea ser redirigido al GitHub del proyecto para consultar más información?",
+    "githubConfirm": "Sí, abrir GitHub",
+    "githubCancel": "No, quedarse aquí"
+  },
+  "toast": {
+    "eyebrow": "Mensaje enviado",
+    "title": "Tu solicitud ha sido enviada",
+    "description": "Gracias por tu mensaje. Me pondré en contacto contigo lo antes posible."
+  }
+}
