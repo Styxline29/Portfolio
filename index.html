@@ -122,10 +122,61 @@
       </nav>
 
       <div class="nav-menu" hidden id="navMenu">
-        <a href="#projets"><i class="fa-solid fa-folder-open"></i> Projets</a>
-        <a href="#competences"><i class="fa-solid fa-code"></i> Compétences</a>
-        <a href="#experience"><i class="fa-solid fa-briefcase"></i> Expériences</a>
-        <a href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+        <div class="mobile-menu-top">
+          <a href="#pageTop" class="mobile-menu-brand" data-scroll-top="true">
+            <span class="logo-mark">S</span>
+            <span class="logo-text">Styx<span class="accent">aether</span></span>
+          </a>
+
+          <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Fermer le menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="mobile-main-links">
+          <a href="#projets">
+            <i class="fa-solid fa-folder-open"></i>
+            <span>Projets</span>
+          </a>
+          <a href="#competences">
+            <i class="fa-solid fa-code"></i>
+            <span>Compétences</span>
+          </a>
+          <a href="#experience">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Expériences</span>
+          </a>
+          <a href="#contact">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <div class="mobile-quick-actions">
+          <button class="mobile-theme-btn" id="mobileThemeToggle" type="button">
+            <i class="fa-solid fa-sun"></i>
+            <span>Thème</span>
+          </button>
+
+          <a class="mobile-cv-btn" download href="./assets/CV_Lucas_VIGILE.pdf">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>CV</span>
+          </a>
+        </div>
+
+        <div class="mobile-lang-card">
+          <span class="mobile-lang-title">
+            <i class="fa-solid fa-globe"></i>
+            Langue
+          </span>
+
+          <div class="mobile-lang-pills">
+            <button class="mobile-language-option" data-lang="fr" type="button">FR</button>
+            <button class="mobile-language-option" data-lang="en" type="button">EN</button>
+            <button class="mobile-language-option" data-lang="es" type="button">ES</button>
+            <button class="mobile-language-option" data-lang="zh" type="button">中文</button>
+          </div>
+        </div>
       </div>
     </header>
     <main>

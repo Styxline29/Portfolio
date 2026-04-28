@@ -1237,23 +1237,18 @@ document.addEventListener(
 })();
 
 
+
+
 /* =========================================================
-   FERME LES MENUS OUVERTS DÈS QU'ON SCROLL
-   Garde le comportement actuel :
-   - navbar cachée pendant le scroll
-   - navbar réaffichée quand le scroll s'arrête
+   MENU MOBILE CLEAN - SANS FERMETURE AU SCROLL
    ========================================================= */
 
-const closeOpenDropdownsOnScroll = () => {
-  const languageMenu = document.getElementById("languageMenu");
-  const languageToggle = document.getElementById("languageToggle");
+const mobileMenuCloseClean = document.getElementById("mobileMenuClose");
+const mobileThemeToggleClean = document.getElementById("mobileThemeToggle");
+
+const closeMobileMenuClean = () => {
   const navMenu = document.getElementById("navMenu");
   const burgerBtn = document.getElementById("burgerBtn");
-
-  if (languageMenu && !languageMenu.hasAttribute("hidden")) {
-    languageMenu.setAttribute("hidden", "");
-    languageToggle?.setAttribute("aria-expanded", "false");
-  }
 
   if (navMenu && !navMenu.hasAttribute("hidden")) {
     navMenu.setAttribute("hidden", "");
@@ -1261,4 +1256,64 @@ const closeOpenDropdownsOnScroll = () => {
   }
 };
 
-window.addEventListener("scroll", closeOpenDropdownsOnScroll, { passive: true });
+mobileMenuCloseClean?.addEventListener("click", closeMobileMenuClean);
+
+mobileThemeToggleClean?.addEventListener("click", () => {
+  document.getElementById("themeToggle")?.click();
+
+  const icon = mobileThemeToggleClean.querySelector("i");
+  const isDark = document.documentElement.classList.contains("dark");
+
+  if (icon) {
+    icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+  }
+});
+
+document.querySelectorAll(".mobile-language-option").forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedLang = button.dataset.lang;
+
+    if (typeof setLanguage === "function") {
+      setLanguage(selectedLang);
+    } else if (typeof loadLanguage === "function") {
+      loadLanguage(selectedLang);
+    } else {
+      localStorage.setItem("site-language", selectedLang);
+      window.location.reload();
+    }
+
+    document.querySelectorAll(".mobile-language-option").forEach((option) => {
+      option.classList.toggle("is-active", option.dataset.lang === selectedLang);
+    });
+
+    closeMobileMenuClean();
+  });
+});
+
+/* On ferme le menu uniquement quand on clique sur un lien, PAS au scroll. */
+document.querySelectorAll("#navMenu a[href^='#']").forEach((link) => {
+  link.addEventListener("click", closeMobileMenuClean);
+});
+
+window.addEventListener("load", () => {
+  const currentLang = localStorage.getItem("site-language") || "fr";
+
+  document.querySelectorAll(".mobile-language-option").forEach((option) => {
+    option.classList.toggle("is-active", option.dataset.lang === currentLang);
+  });
+
+  const icon = mobileThemeToggleClean?.querySelector("i");
+  const isDark = document.documentElement.classList.contains("dark");
+
+  if (icon) {
+    icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMobileMenuClean();
+  }
+});
+
+/* Important : le burger reste ouvert pendant le scroll sur mobile/tablette. */

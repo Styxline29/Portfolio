@@ -7455,3 +7455,374 @@ html {
 :root:not(.dark) body.background-faded::after {
   background: rgba(255,255,255,0.26) !important;
 }
+
+
+/* =========================================================
+   MOBILE/TABLETTE CLEAN - MENU BURGER PROPRE
+   + le menu ne se ferme plus au scroll sur mobile/tablette.
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .site-header {
+    top: 14px !important;
+    padding: 0 16px !important;
+    pointer-events: none !important;
+  }
+
+  .main-navbar,
+  .navbar-shell,
+  .nav-menu {
+    pointer-events: auto !important;
+  }
+
+  .navbar-shell {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: auto auto !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .desktop-nav,
+  .nav-links,
+  .language-dropdown,
+  .actions > .icon-btn,
+  .actions > .cv-btn {
+    display: none !important;
+  }
+
+  .logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    min-width: 0 !important;
+    width: auto !important;
+  }
+
+  .logo-mark {
+    width: 46px !important;
+    height: 46px !important;
+    flex: 0 0 46px !important;
+    border-radius: 16px !important;
+    display: grid !important;
+    place-items: center !important;
+    color: #ffffff !important;
+    background: rgba(5, 8, 20, 0.62) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    backdrop-filter: blur(16px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+  }
+
+  .logo-text {
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.75) !important;
+  }
+
+  .actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
+  .burger {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    min-height: 52px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 17px !important;
+    color: #ffffff !important;
+    background: rgba(5, 8, 20, 0.62) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    backdrop-filter: blur(16px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+  }
+
+  /* Menu compact type card flottante */
+  .nav-menu {
+    position: fixed !important;
+    top: 78px !important;
+    right: 16px !important;
+    left: auto !important;
+
+    width: min(320px, calc(100vw - 32px)) !important;
+    max-height: calc(100vh - 96px) !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+
+    margin: 0 !important;
+    padding: 14px !important;
+    border-radius: 24px !important;
+
+    background:
+      linear-gradient(145deg, rgba(10, 15, 30, 0.88), rgba(8, 12, 24, 0.80)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    box-shadow:
+      0 22px 60px rgba(0, 0, 0, 0.38),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(24px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(160%) !important;
+
+    animation: cleanMobileMenu 0.22s ease both !important;
+  }
+
+  .nav-menu[hidden] {
+    display: none !important;
+  }
+
+  @keyframes cleanMobileMenu {
+    from {
+      opacity: 0;
+      transform: translateY(-8px) scale(0.97);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .mobile-menu-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+  }
+
+  .mobile-menu-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 900 !important;
+    min-width: 0 !important;
+  }
+
+  .mobile-menu-brand .logo-mark {
+    width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px !important;
+    border-radius: 14px !important;
+  }
+
+  .mobile-menu-brand .logo-text {
+    font-size: 0.98rem !important;
+    white-space: nowrap !important;
+  }
+
+  .mobile-menu-close {
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+  }
+
+  .mobile-main-links {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 9px !important;
+  }
+
+  .mobile-main-links a {
+    min-height: 74px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    padding: 12px !important;
+    border-radius: 18px !important;
+
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 900 !important;
+    background: rgba(255, 255, 255, 0.065) !important;
+    border: 1px solid rgba(255, 255, 255, 0.085) !important;
+  }
+
+  .mobile-main-links a i {
+    font-size: 1.05rem !important;
+    color: var(--accent) !important;
+  }
+
+  .mobile-main-links a span {
+    color: #ffffff !important;
+    font-size: 0.92rem !important;
+  }
+
+  .mobile-quick-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 9px !important;
+  }
+
+  .mobile-theme-btn,
+  .mobile-cv-btn {
+    min-height: 50px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 9px !important;
+    border-radius: 17px !important;
+    text-decoration: none !important;
+    font-weight: 900 !important;
+  }
+
+  .mobile-theme-btn {
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+  }
+
+  .mobile-cv-btn {
+    color: #ffffff !important;
+    border: none !important;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover)) !important;
+    box-shadow: 0 12px 26px rgba(255, 75, 62, 0.24) !important;
+  }
+
+  .mobile-lang-card {
+    display: grid !important;
+    gap: 10px !important;
+    padding: 12px !important;
+    border-radius: 19px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .mobile-lang-title {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .mobile-lang-pills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .mobile-language-option {
+    flex: 1 1 62px !important;
+    min-height: 42px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    cursor: pointer !important;
+  }
+
+  .mobile-language-option:hover,
+  .mobile-language-option.is-active {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover)) !important;
+    border-color: transparent !important;
+  }
+
+  /* Mode clair mobile */
+  :root:not(.dark) .nav-menu {
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(245, 248, 252, 0.86)) !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+    box-shadow:
+      0 22px 60px rgba(15, 23, 42, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+  }
+
+  :root:not(.dark) .mobile-menu-brand,
+  :root:not(.dark) .mobile-menu-brand .logo-text,
+  :root:not(.dark) .mobile-menu-close,
+  :root:not(.dark) .mobile-main-links a,
+  :root:not(.dark) .mobile-main-links a span,
+  :root:not(.dark) .mobile-theme-btn,
+  :root:not(.dark) .mobile-lang-title,
+  :root:not(.dark) .mobile-language-option {
+    color: #0f172a !important;
+    text-shadow: none !important;
+  }
+
+  :root:not(.dark) .mobile-menu-close,
+  :root:not(.dark) .mobile-main-links a,
+  :root:not(.dark) .mobile-theme-btn,
+  :root:not(.dark) .mobile-lang-card,
+  :root:not(.dark) .mobile-language-option {
+    background: rgba(255, 255, 255, 0.66) !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+  }
+
+  :root:not(.dark) .mobile-language-option:hover,
+  :root:not(.dark) .mobile-language-option.is-active {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover)) !important;
+    border-color: transparent !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    top: 12px !important;
+    padding: 0 12px !important;
+  }
+
+  .logo-text {
+    display: none !important;
+  }
+
+  .nav-menu {
+    top: 74px !important;
+    right: 12px !important;
+    width: min(310px, calc(100vw - 24px)) !important;
+    max-height: calc(100vh - 92px) !important;
+    padding: 12px !important;
+    border-radius: 22px !important;
+  }
+
+  .mobile-main-links a {
+    min-height: 68px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-menu {
+    width: calc(100vw - 24px) !important;
+  }
+
+  .mobile-main-links,
+  .mobile-quick-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mobile-main-links a {
+    min-height: 52px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+}
