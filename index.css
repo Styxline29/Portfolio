@@ -7954,3 +7954,246 @@ html {
 .mobile-lang-pills{grid-template-columns:repeat(4,1fr);gap:4px;}
 .mobile-language-option{height:32px;font-size:.75rem;border-radius:10px;}
 }
+
+
+/* =========================================================
+   FIX MOBILE : SCROLL FLUIDE ET CONTENU VISIBLE RAPIDEMENT
+   Problème corrigé :
+   - le hero prenait trop de hauteur sur téléphone
+   - il fallait trop scroller avant de voir les sections suivantes
+   - animations trop lentes / éléments qui restent cachés
+   ========================================================= */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    scroll-behavior: smooth !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    min-height: 100% !important;
+  }
+
+  /* Hero moins haut et plus fluide */
+  .hero {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 92px !important;
+    padding-bottom: 34px !important;
+    display: block !important;
+  }
+
+  .hero-bootstrap-row {
+    min-height: auto !important;
+    height: auto !important;
+    row-gap: 26px !important;
+  }
+
+  .hero-text {
+    max-width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-kicker {
+    margin-bottom: 12px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.10em !important;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2.25rem, 11vw, 3.65rem) !important;
+    line-height: 0.98 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-description {
+    max-width: 92% !important;
+    margin: 0 auto 18px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .hero-badges {
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .interactive-chip {
+    padding: 9px 12px !important;
+    font-size: 0.86rem !important;
+  }
+
+  .hero-cta {
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-width: 0 !important;
+    min-height: 52px !important;
+    padding: 12px 16px !important;
+    border-radius: 17px !important;
+    font-size: 0.92rem !important;
+  }
+
+  /* Carte avatar réduite pour ne pas bloquer tout l'écran */
+  .hero-side {
+    margin-top: 6px !important;
+  }
+
+  .hero-panel {
+    width: min(292px, 88vw) !important;
+    height: 315px !important;
+    border-radius: 24px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-avatar-wrap {
+    width: 185px !important;
+    height: 185px !important;
+  }
+
+  .hero-photo {
+    width: 158px !important;
+    height: 158px !important;
+  }
+
+  .floating-card {
+    padding: 9px 11px !important;
+    border-radius: 14px !important;
+    font-size: 0.78rem !important;
+  }
+
+  .floating-card-top {
+    top: 18px !important;
+    right: 14px !important;
+  }
+
+  .floating-card-bottom {
+    bottom: 18px !important;
+    left: 14px !important;
+  }
+
+  .floating-card-right {
+    right: 10px !important;
+    max-width: 145px !important;
+  }
+
+  /* Sections plus proches : le contenu arrive vite au scroll */
+  .section {
+    padding: 42px 0 !important;
+  }
+
+  .section-header {
+    margin-bottom: 18px !important;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.85rem, 8vw, 2.55rem) !important;
+  }
+
+  .container {
+    width: min(var(--container), calc(100% - 28px)) !important;
+  }
+
+  /* Plus d'effet "il faut scroller longtemps avant que ça apparaisse" */
+  /* Animation mobile légère conservée */
+  .scroll-animate,
+  .scroll-animate[data-animate] {
+    opacity: 0 !important;
+    visibility: visible !important;
+    transform: translateY(18px) !important;
+    transition:
+      opacity 0.42s ease,
+      transform 0.42s ease !important;
+    will-change: opacity, transform !important;
+  }
+
+  .scroll-animate.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Evite les grandes zones vides créées par animations/spotlight */
+  .hero-spotlight,
+  .hero::before,
+  .hero::after {
+    opacity: 0.20 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Téléphone très compact */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 82px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2.05rem, 10vw, 3rem) !important;
+  }
+
+  .hero-description {
+    font-size: 0.9rem !important;
+    line-height: 1.58 !important;
+  }
+
+  .hero-panel {
+    width: min(270px, 86vw) !important;
+    height: 292px !important;
+  }
+
+  .hero-avatar-wrap {
+    width: 168px !important;
+    height: 168px !important;
+  }
+
+  .hero-photo {
+    width: 145px !important;
+    height: 145px !important;
+  }
+
+  .section {
+    padding: 36px 0 !important;
+  }
+
+  .project-image {
+    height: 175px !important;
+  }
+
+  .card-body {
+    padding: 12px 4px 4px !important;
+  }
+
+  .project p {
+    min-height: auto !important;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 380px) {
+  .hero {
+    padding-top: 76px !important;
+  }
+
+  .hero-panel {
+    width: min(250px, 84vw) !important;
+    height: 270px !important;
+  }
+
+  .hero-avatar-wrap {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .hero-photo {
+    width: 130px !important;
+    height: 130px !important;
+  }
+}

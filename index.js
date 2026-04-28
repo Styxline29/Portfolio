@@ -1317,3 +1317,41 @@ document.addEventListener("keydown", (event) => {
 });
 
 /* Important : le burger reste ouvert pendant le scroll sur mobile/tablette. */
+
+
+
+
+/* =========================================================
+   MOBILE : ANIMATION LÉGÈRE + SCROLL FLUIDE
+   Garde l'effet d'apparition sans ralentir le scroll.
+   ========================================================= */
+
+const initLightMobileScrollAnimations = () => {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  if (!isMobile) return;
+
+  const elements = document.querySelectorAll(".scroll-animate");
+
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        currentObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -6% 0px",
+    }
+  );
+
+  elements.forEach((element) => {
+    element.classList.remove("is-visible");
+    observer.observe(element);
+  });
+};
+
+window.addEventListener("DOMContentLoaded", initLightMobileScrollAnimations);
+window.addEventListener("load", initLightMobileScrollAnimations);
