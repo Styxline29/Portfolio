@@ -7826,3 +7826,131 @@ html {
     align-items: center !important;
   }
 }
+
+
+/* =========================================================
+   VERSION TÉLÉPHONE COMPACTE
+   Le menu burger prend beaucoup moins de place sur petit écran.
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .nav-menu {
+    top: 70px !important;
+    right: 12px !important;
+    left: auto !important;
+    width: min(265px, calc(100vw - 24px)) !important;
+    max-height: calc(100vh - 86px) !important;
+    padding: 10px !important;
+    gap: 8px !important;
+    border-radius: 20px !important;
+  }
+
+  .mobile-menu-top {
+    justify-content: flex-end !important;
+    margin-bottom: 0 !important;
+  }
+
+  .mobile-menu-brand {
+    display: none !important;
+  }
+
+  .mobile-menu-close {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 13px !important;
+  }
+
+  .mobile-main-links {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 7px !important;
+  }
+
+  .mobile-main-links a {
+    min-height: 58px !important;
+    padding: 10px !important;
+    border-radius: 15px !important;
+    gap: 6px !important;
+  }
+
+  .mobile-main-links a i {
+    font-size: 0.95rem !important;
+  }
+
+  .mobile-main-links a span {
+    font-size: 0.82rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .mobile-quick-actions {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 7px !important;
+  }
+
+  .mobile-theme-btn,
+  .mobile-cv-btn {
+    min-height: 44px !important;
+    border-radius: 15px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .mobile-lang-card {
+    padding: 9px !important;
+    gap: 8px !important;
+    border-radius: 16px !important;
+  }
+
+  .mobile-lang-title {
+    font-size: 0.72rem !important;
+  }
+
+  .mobile-lang-pills {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .mobile-language-option {
+    min-height: 38px !important;
+    flex: initial !important;
+    padding: 0 6px !important;
+    border-radius: 12px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .mobile-language-option[data-lang="zh"] {
+    grid-column: auto !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-menu {
+    width: calc(100vw - 24px) !important;
+  }
+
+  .mobile-main-links {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .mobile-quick-actions {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .mobile-lang-pills {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ULTRA COMPACT MOBILE FINAL */
+@media (max-width:480px){
+.nav-menu{top:65px;right:10px;width:240px;padding:8px;border-radius:16px;}
+.mobile-menu-close{width:32px;height:32px;font-size:.9rem;}
+.mobile-main-links{grid-template-columns:1fr 1fr;gap:6px;}
+.mobile-main-links a{min-height:50px;padding:8px;border-radius:12px;}
+.mobile-main-links a i{font-size:.85rem;}
+.mobile-main-links a span{font-size:.75rem;}
+.mobile-theme-btn,.mobile-cv-btn{height:40px;font-size:.8rem;border-radius:12px;}
+.mobile-lang-card{padding:6px;gap:6px;}
+.mobile-lang-title{font-size:.65rem;}
+.mobile-lang-pills{grid-template-columns:repeat(4,1fr);gap:4px;}
+.mobile-language-option{height:32px;font-size:.75rem;border-radius:10px;}
+}
